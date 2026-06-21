@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 분석 보고서</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            padding: 80px 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 600;
+            background: linear-gradient(to right, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .diagram-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+        }
+
+        .box-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 260px;
+            height: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .box-link:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #4facfe;
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.3);
+        }
+
+        /* Connecting lines from Left to Middle */
+        .col-left .box-link::after {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            width: 40px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .col-middle::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 40px; /* Aligned with center of first box */
+            bottom: 40px; /* Aligned with center of last box */
+            width: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+        }
+
+        .col-middle .box-link::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            width: 40px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        /* Adjust alignment for right column */
+        .col-right {
+            justify-content: flex-start;
+            padding-top: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>"축산물품질평가원 감리사업" AI 분석 보고서(미리보기)</h1>
+    </div>
+
+    <div class="diagram-container">
+        <!-- Left Column -->
+        <div class="column col-left">
+            <a href="2026년도 정보화 사업 통합감리 제안요청서(공고).pdf" class="box-link" target="_blank">축산물품질평가원<br>제안요청서</a>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="column col-middle">
+            <a href="20260616_축산물품질평가원_통합감리_분석보고서.html" class="box-link" target="_blank">기획제안 보고서(종합)</a>
+            <a href="20260616_축산물품질평가원_통합감리_1페이지상세요약.html" class="box-link" target="_blank">상세요약(1P)</a>
+            <a href="20260616_축산물품질평가원_통합감리_1페이지인포그래픽.html" class="box-link" target="_blank">인포그래픽(1P)</a>
+            <a href="20260616_축산물품질평가원_통합감리_PT요약보고서.html" class="box-link" target="_blank">발표자료(PPT)</a>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column col-right">
+            <a href="20260616_축산물품질평가원_통합감리_영역별감리계획.html" class="box-link" target="_blank">영역별 감리계획</a>
+            <a href="20260616_축산물품질평가원_통합감리_제안서_논리구조서.html" class="box-link" target="_blank">제안서 논리구조</a>
+            <a href="20260616_축산물품질평가원_통합감리_제안서_초안.html" class="box-link" target="_blank">제안서(초안)</a>
+        </div>
+    </div>
+</body>
+</html>

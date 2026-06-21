@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>축산물품질평가원 · 통합감리 · PT 요약보고서</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0D2340;--navy-mid:#1A3A5C;--navy-light:#2B5083;
+  --gold:#C9922A;--gold-light:#F0C96A;--gold-soft:#FDF6E3;--gold-border:#EDD38A;
+  --red:#DC2626;--red-soft:#FEF2F2;
+  --orange:#D97706;--orange-soft:#FFFBEB;
+  --green:#059669;--green-soft:#ECFDF5;
+  --sans:'Pretendard Variable','Pretendard',sans-serif;
+  --serif:'DM Serif Display',serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{font-family:var(--sans);background:#e8eaf0;color:#111;-webkit-font-smoothing:antialiased}
+.tb{position:fixed;top:0;left:0;right:0;height:50px;z-index:200;background:rgba(13,35,64,.97);border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:10px;padding:0 24px}
+.tb-title{font:700 13px var(--sans);color:#fff;letter-spacing:-.2px}
+.tb-sub{font:600 8.5px var(--mono);color:var(--gold-light);letter-spacing:2pt;text-transform:uppercase;margin-left:8px}
+.tb-spacer{flex:1}
+.tb button{height:32px;padding:0 14px;border-radius:5px;cursor:pointer;font:600 11px var(--sans);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);background:transparent;transition:all .15s}
+.tb button:hover{background:rgba(255,255,255,.1);color:#fff}
+.tb .btn-save{margin-right:4px}
+.tb .btn-print{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700}
+.stack{padding:66px 0 40px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.slide{width:297mm;min-height:210mm;background:#fff;position:relative;overflow:hidden;border-radius:6px;box-shadow:0 4px 24px rgba(0,0,0,.15);display:flex;flex-direction:column}
+.slide-num{position:absolute;bottom:8mm;right:10mm;font:500 7.5pt var(--mono);color:#9CA3AF;letter-spacing:1.5pt}
+.sh{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:6mm 10mm 5mm;border-bottom:3px solid var(--gold);flex-shrink:0}
+.sh .s-tag{font:700 7pt var(--mono);letter-spacing:2.5pt;text-transform:uppercase;color:var(--gold-light);margin-bottom:2mm}
+.sh h2{font:700 18pt var(--sans);color:#fff;letter-spacing:-.5px;line-height:1.2}
+.sh .s-sub{font:400 9.5pt var(--sans);color:rgba(255,255,255,.55);margin-top:1.5mm}
+.sc{flex:1;padding:6mm 10mm 10mm;display:flex;flex-direction:column;gap:4mm}
+.cover{background:var(--navy);justify-content:space-between}
+.cover::before{content:"";position:absolute;top:0;left:0;right:0;height:4mm;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));z-index:2}
+.cover-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:12mm 16mm;position:relative;z-index:1}
+.cover-deco{position:absolute;right:0;top:0;bottom:0;width:80mm;background:linear-gradient(180deg,rgba(201,146,42,.1),rgba(43,80,131,.06));border-left:1px solid rgba(201,146,42,.15)}
+.cover-tag{display:inline-block;background:rgba(201,146,42,.18);border:1px solid rgba(201,146,42,.4);color:var(--gold-light);font:700 7pt var(--mono);letter-spacing:2.5pt;text-transform:uppercase;padding:3pt 9pt;border-radius:4pt;margin-bottom:5mm}
+.cover-title{font:400 32pt var(--serif);color:#fff;line-height:1.15;margin-bottom:3mm}
+.cover-title em{color:var(--gold-light);font-style:italic}
+.cover-rule{width:28mm;height:1mm;background:linear-gradient(90deg,var(--gold),transparent);margin:4mm 0}
+.cover-sub{font:400 10.5pt var(--sans);color:rgba(255,255,255,.5);line-height:1.8;max-width:110mm}
+.cover-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:5mm;border-top:1px solid rgba(255,255,255,.1);padding-top:5mm;margin-top:7mm}
+.cm-l{font:700 7pt var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold);margin-bottom:2mm}
+.cm-v{font:600 10.5pt var(--sans);color:#fff}
+.cover-foot{background:rgba(255,255,255,.04);border-top:1px solid rgba(201,146,42,.2);padding:4mm 16mm;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.cf-l{font:700 10.5pt var(--sans);color:#fff}
+.cf-l span{display:block;font:500 6.5pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--gold-light);margin-top:1.5mm}
+.cf-r{font:500 6.5pt var(--mono);letter-spacing:1.5pt;color:rgba(255,255,255,.3);text-transform:uppercase}
+.kpi-grid{display:grid;gap:4mm}
+.kpi-grid.col-4{grid-template-columns:repeat(4,1fr)}
+.kpi-grid.col-3{grid-template-columns:repeat(3,1fr)}
+.kpi-grid.col-2{grid-template-columns:repeat(2,1fr)}
+.kpi-card{background:#F7F8FA;border:1px solid #DDE1E9;border-radius:6px;padding:4mm 5mm;text-align:center}
+.kpi-card.accent{background:var(--navy);border-color:var(--navy)}
+.kpi-card.gold{background:var(--gold-soft);border-color:var(--gold-border)}
+.kpi-card.red{background:var(--red-soft);border-color:rgba(220,38,38,.25)}
+.kpi-card.green{background:var(--green-soft);border-color:rgba(5,150,105,.25)}
+.kpi-label{font:700 7pt var(--mono);letter-spacing:1.8pt;text-transform:uppercase;color:#6B7280;margin-bottom:2mm}
+.kpi-card.accent .kpi-label{color:rgba(255,255,255,.5)}
+.kpi-val{font:400 24pt var(--serif);color:var(--navy);line-height:1}
+.kpi-card.accent .kpi-val{color:#fff}
+.kpi-card.gold .kpi-val{color:var(--gold)}
+.kpi-card.red .kpi-val{color:var(--red)}
+.kpi-card.green .kpi-val{color:var(--green)}
+.kpi-unit{font:600 7.5pt var(--sans);color:#6B7280;margin-top:1.5mm}
+.kpi-card.accent .kpi-unit{color:rgba(255,255,255,.5)}
+.pt-table{width:100%;border-collapse:collapse;font-size:9.5pt;border:1px solid #DDE1E9;border-radius:5px;overflow:hidden}
+.pt-table thead tr{background:var(--navy)}
+.pt-table thead td{padding:2.5mm 4mm;font:700 9pt var(--sans);color:var(--gold-light)}
+.pt-table tbody tr{border-bottom:1px solid #EAEDF2}
+.pt-table tbody tr:last-child{border-bottom:none}
+.pt-table tbody tr:nth-child(even){background:#F7F8FA}
+.pt-table td{padding:2.5mm 4mm;line-height:1.6;vertical-align:top}
+.pt-table td.k{font-weight:700;color:var(--navy);width:38mm;background:#F7F8FA;border-right:1px solid #DDE1E9}
+.pt-table td.v{color:#374151}
+.pt-table td.c{text-align:center}
+.bdg{display:inline-block;font:700 7pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;padding:2pt 7pt;border-radius:4pt}
+.bdg.high{background:var(--red-soft);color:var(--red);border:1px solid rgba(220,38,38,.25)}
+.bdg.mid{background:var(--orange-soft);color:var(--orange);border:1px solid rgba(217,119,6,.25)}
+.bdg.low{background:var(--green-soft);color:var(--green);border:1px solid rgba(5,150,105,.25)}
+.bdg.info{background:#EBF0F8;color:var(--navy-light);border:1px solid #B8CCDF}
+.bdg.gold{background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-border)}
+.card-list{display:flex;flex-direction:column;gap:3mm}
+.card-item{background:#F7F8FA;border:1px solid #DDE1E9;border-left:4px solid var(--navy-light);border-radius:0 5px 5px 0;padding:3mm 5mm;display:grid;grid-template-columns:auto 1fr;gap:4mm;align-items:start}
+.card-item.red{border-left-color:var(--red);background:var(--red-soft)}
+.card-item.orange{border-left-color:var(--orange);background:var(--orange-soft)}
+.card-item.gold{border-left-color:var(--gold);background:var(--gold-soft)}
+.ci-label{font:700 8pt var(--mono);color:var(--navy-light);white-space:nowrap}
+.card-item.red .ci-label{color:var(--red)}
+.card-item.orange .ci-label{color:var(--orange)}
+.card-item.gold .ci-label{color:var(--gold)}
+.ci-body{font:400 9.5pt var(--sans);color:#374151;line-height:1.7}
+.ci-body strong{color:var(--navy)}
+.csf-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.csf-card{background:#F7F8FA;border:1px solid #DDE1E9;border-top:3px solid var(--navy-light);border-radius:5px;padding:4mm 5mm}
+.csf-no{font:700 7pt var(--mono);letter-spacing:2pt;color:var(--navy-light);margin-bottom:1.5mm}
+.csf-title{font:700 10.5pt var(--sans);color:var(--navy);margin-bottom:2mm;line-height:1.3}
+.csf-body{font:400 9.5pt var(--sans);color:#6B7280;line-height:1.65}
+.callout{background:#EBF0F8;border:1px solid #B8CCDF;border-left:4px solid var(--navy-light);padding:4mm 6mm;border-radius:0 5px 5px 0}
+.callout.gold{background:var(--gold-soft);border-color:var(--gold-border);border-left-color:var(--gold)}
+.callout.red{background:var(--red-soft);border-color:rgba(220,38,38,.2);border-left-color:var(--red)}
+.cl-label{font:700 7pt var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--navy-light);margin-bottom:2mm}
+.callout.gold .cl-label{color:var(--gold)}
+.callout.red .cl-label{color:var(--red)}
+.callout p{font:400 9.5pt var(--sans);color:#111;line-height:1.8}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm}
+.prog-wrap{margin:2mm 0}
+.prog-label{display:flex;justify-content:space-between;font:700 8pt var(--sans);color:var(--navy);margin-bottom:1.5mm}
+.prog-bar{height:8px;background:#DDE1E9;border-radius:4px;overflow:hidden}
+.prog-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--navy-light),var(--gold))}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#DDE1E9,transparent);margin:2mm 0}
+@media print{
+  @page{size:A4 landscape;margin:8mm 10mm}
+  html,body{background:#fff}
+  .tb{display:none}
+  .stack{padding:0;gap:0}
+  .slide{width:auto;min-height:auto;box-shadow:none;border-radius:0;border:none;page-break-after:always}
+  .slide:last-child{page-break-after:auto}
+  .cover{min-height:210mm}
+}
+</style>
+</head>
+<body>
+
+<div class="tb">
+  <div class="tb-title">PT 요약보고서 — 축산물품질평가원 · 통합감리<span class="tb-sub">A4 가로 · 15슬라이드</span></div>
+  <div class="tb-spacer"></div>
+  <button class="btn-save" onclick="saveDoc()">저장</button>
+  <button class="btn-print" onclick="window.print()">PDF 인쇄</button>
+</div>
+
+<div class="stack">
+
+<!-- ── SLIDE 01: COVER ── -->
+<div class="slide cover">
+  <div class="cover-deco"></div>
+  <div class="cover-body">
+    <div class="cover-tag">RFP Analysis · PT Summary Report</div>
+    <div class="cover-title"><em>축산물품질평가원</em> 2026년 정보화 사업<br>통합감리 제안요청서 분석 요약</div>
+    <div class="cover-rule"></div>
+    <div class="cover-sub">3개 사업 통합감리 — 계열화사업자관리시스템구축+e음개선 · 수급지원플랫폼4단계 · 스마트축산빅데이터고도화3차<br>RDD Workflow 적용 · Search-First 원칙 · 내부 전략 보고용</div>
+    <div class="cover-meta">
+      <div><div class="cm-l">예산</div><div class="cm-v">1.7억원</div></div>
+      <div><div class="cm-l">기간</div><div class="cm-v">2026.07~12</div></div>
+      <div><div class="cm-l">감리단계</div><div class="cm-v">3단계+상주</div></div>
+      <div><div class="cm-v" style="color:var(--gold-light)">조건부 GO</div></div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <div class="cf-l">전문 1인 감리회사<span>Internal Proposal Analysis · Confidential</span></div>
+    <div class="cf-r">2026.06.16 · RDD Workflow · v1.0</div>
+  </div>
+  <div class="slide-num">01 / 15</div>
+</div>
+
+<!-- ── SLIDE 02: 핵심 지표 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Key Metrics · 핵심 지표</div>
+    <h2>사업 개요 — 한눈에 보는 핵심 수치</h2>
+  </div>
+  <div class="sc">
+    <div class="kpi-grid col-4">
+      <div class="kpi-card gold"><div class="kpi-label">감리 예산</div><div class="kpi-val">1.7억</div><div class="kpi-unit">170,000천원 (부가세 포함)</div></div>
+      <div class="kpi-card accent"><div class="kpi-label">대상사업 구축비</div><div class="kpi-val">30~56억</div><div class="kpi-unit">감리비율 3~5.7%</div></div>
+      <div class="kpi-card"><div class="kpi-label">감리 투입</div><div class="kpi-val">143+</div><div class="kpi-unit">M/D (상근 58% + 3단계)</div></div>
+      <div class="kpi-card green"><div class="kpi-label">Go/No-Go</div><div class="kpi-val" style="font-size:20pt;color:var(--green)">조건부 GO</div><div class="kpi-unit">Bottom Line 145백만원↑</div></div>
+    </div>
+    <div class="kpi-grid col-4">
+      <div class="kpi-card"><div class="kpi-label">감리 단계</div><div class="kpi-val" style="font-size:20pt">3</div><div class="kpi-unit">요구정의+설계+종료</div></div>
+      <div class="kpi-card red"><div class="kpi-label">독소조항</div><div class="kpi-val" style="font-size:20pt">7</div><div class="kpi-unit">건 (High 3 / Mid 3)</div></div>
+      <div class="kpi-card"><div class="kpi-label">RFP 요구사항</div><div class="kpi-val" style="font-size:20pt">10</div><div class="kpi-unit">개 전항목 매핑</div></div>
+      <div class="kpi-card"><div class="kpi-label">평가 비율</div><div class="kpi-val" style="font-size:20pt">90:10</div><div class="kpi-unit">기술 : 가격</div></div>
+    </div>
+    <div class="callout gold">
+      <div class="cl-label">이례적 수치 — 발주처 숨은 의도</div>
+      <p>감리비율 3~5.7%는 통상 3~8% 대비 중하회. 3개 사업 통합감리로 효율성 추구, 원가 절감 의도 반영. 공동수급 허용(5개사)으로 중소형 법인 참여 유도. 1인 법인은 관리비 최소화로 MD당 단가 경쟁력 확보 가능.</p>
+    </div>
+  </div>
+  <div class="slide-num">02 / 15</div>
+</div>
+
+<!-- ── SLIDE 03: 발주기관 분석 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Client Analysis · 발주기관</div>
+    <h2>축산물품질평가원 (KAPE) — Pain Point 분석</h2>
+    <div class="s-sub">근거: 딥서치 — 감사원 감사 결과 · 나라장터 이력 · 뉴스 분석 (2024~2026)</div>
+  </div>
+  <div class="sc">
+    <div class="two-col">
+      <div>
+        <div style="font:700 10pt var(--sans);color:var(--navy);margin-bottom:3mm">기관 현황</div>
+        <table class="pt-table">
+          <tbody>
+            <tr><td class="k">정식 명칭</td><td class="v">축산물품질평가원 (Korea Institute for Animal Products Quality Evaluation)</td></tr>
+            <tr><td class="k">IT 조직</td><td class="v">AX혁신본부 (지능정보기획처·빅데이터분석처·정보화사업처·정보보안팀) + 스마트축산본부(2026.01 신설)</td></tr>
+            <tr><td class="k">임직원 수</td><td class="v">약 498명 · 매출액 약 667억원</td></tr>
+            <tr><td class="k">소재지</td><td class="v">세종특별자치시 아름서길 21</td></tr>
+            <tr><td class="k">대상사업 구축비</td><td class="v">약 30~56억원 (3개 사업 통합, 감리비율 3~5.7%로 역산)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="font:700 10pt var(--sans);color:var(--red);margin-bottom:3mm">핵심 Pain Point</div>
+        <div class="card-list">
+          <div class="card-item red">
+            <span class="ci-label">P-1<br>보안검증</span>
+            <div class="ci-body"><strong>보안 규정 준수에 대한 외부 검증 공백</strong> — 2024년 농식품부 종합감사에서 보안 규정 위반 적발. 감리 외부 점검 필요성 대두. (출처: 네이트뉴스 2024.05.16, 백경뉴스 2024.05.16)</div>
+          </div>
+          <div class="card-item red">
+            <span class="ci-label">P-2<br>통합일정</span>
+            <div class="ci-body"><strong>3개 사업 통합감리의 효율적 일정 관리</strong> — 대상 사업 3개의 기간이 상이(210~240일)하고 단계별 감리 시점 상이. 통합 일정 조정 리스크.</div>
+          </div>
+          <div class="card-item red">
+            <span class="ci-label">P-3<br>전문성</span>
+            <div class="ci-body"><strong>스마트축산·빅데이터 분야 전문 감리 역량</strong> — 스마트축산 빅데이터, AI, 축산정보e음 등 축산 특화 IT 시스템에 대한 감리 전문성 요구.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="cl-label">의사결정자 관심 키워드</div>
+      <p>스마트축산 / AI / 빅데이터 / 디지털 전환 / 축산물원패스 / 여기고기 / 마이데이터 / 혁신 / 안전 / 보안위반 Zero</p>
+    </div>
+  </div>
+  <div class="slide-num">03 / 15</div>
+</div>
+
+<!-- ── SLIDE 04: 정보시스템 현황 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">IT Landscape · 정보시스템 현황</div>
+    <h2>대상 시스템 아키텍처 및 연계 구조</h2>
+    <div class="s-sub">근거: RFP 사업내용 · 목표시스템 개념도</div>
+  </div>
+  <div class="sc">
+    <div class="three-col">
+      <div class="kpi-card" style="text-align:left;padding:4mm 5mm">
+        <div class="kpi-label">대상사업 ①</div>
+        <div style="font:700 10pt var(--sans);color:var(--navy);margin:2mm 0">계열화사업자관리시스템구축+e음개선</div>
+        <div style="font:400 9pt var(--sans);color:#374151;line-height:1.65">축산정보e음 고도화 + 계열화사업자 통합 관리. 데이터 연계 복잡도 중간. 사용자 UI/UX 개선 포함.</div>
+      </div>
+      <div class="kpi-card" style="text-align:left;padding:4mm 5mm">
+        <div class="kpi-label">대상사업 ②</div>
+        <div style="font:700 10pt var(--sans);color:var(--navy);margin:2mm 0">수급지원플랫폼 4단계</div>
+        <div style="font:400 9pt var(--sans);color:#374151;line-height:1.65">축산물 수급예측 및 지원 플랫폼 고도화. 외부 기관 연계 복잡. AI·빅데이터 분석 기능 탑재.</div>
+      </div>
+      <div class="kpi-card" style="text-align:left;padding:4mm 5mm">
+        <div class="kpi-label">대상사업 ③</div>
+        <div style="font:700 10pt var(--sans);color:var(--navy);margin:2mm 0">스마트축산빅데이터고도화 3차</div>
+        <div style="font:400 9pt var(--sans);color:#374151;line-height:1.65">빅데이터 플랫폼 3차 고도화. 데이터 표준화·품질·개방. 민간 연계 API 관리 핵심.</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div style="font:700 10pt var(--sans);color:var(--navy);margin-bottom:3mm">감리 주의사항</div>
+        <table class="pt-table">
+          <tbody>
+            <tr><td class="k">단계 간 연속성</td><td class="v">요구정의→설계→종료 각 단계별 산출물 연속성 점검. 3개 사업 병행 시 단계별 시점 상이 주의</td></tr>
+            <tr><td class="k">핵심 점검</td><td class="v">보안약점진단 의무화(국정원 인증 도구) · 기능점수(FP) 검증 · 웹 접근성 자동화 진단</td></tr>
+            <tr><td class="k">리스크</td><td class="v">현장감리 100% 상주 요건 + 감리원 변경 2일 제한 — 1인 법인에 부담</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="font:700 10pt var(--sans);color:var(--navy);margin-bottom:3mm">기술 복잡도 평가</div>
+        <div class="prog-wrap"><div class="prog-label"><span>보안약점진단 의무화</span><span style="color:var(--red)">극히 높음</span></div><div class="prog-bar"><div class="prog-fill" style="width:95%;background:linear-gradient(90deg,var(--red),#ef4444)"></div></div></div>
+        <div class="prog-wrap"><div class="prog-label"><span>3개 사업 통합 일정</span><span style="color:var(--red)">매우 높음</span></div><div class="prog-bar"><div class="prog-fill" style="width:85%;background:linear-gradient(90deg,var(--red),#ef4444)"></div></div></div>
+        <div class="prog-wrap"><div class="prog-label"><span>FP 검증 + 웹접근성</span><span style="color:var(--orange)">높음</span></div><div class="prog-bar"><div class="prog-fill" style="width:80%;background:linear-gradient(90deg,var(--orange),#f59e0b)"></div></div></div>
+        <div class="prog-wrap"><div class="prog-label"><span>축산·빅데이터·AI</span><span style="color:var(--orange)">높음</span></div><div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">04 / 15</div>
+</div>
+
+<!-- ── SLIDE 05: 요구사항 위험도 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Requirements · RFP 요구사항</div>
+    <h2>10개 전 요구사항 위험도 분포</h2>
+    <div class="s-sub">근거: RFP 세부 과업내용 전 항목 분석</div>
+  </div>
+  <div class="sc">
+    <div class="kpi-grid col-4" style="margin-bottom:2mm">
+      <div class="kpi-card red"><div class="kpi-label">High Risk</div><div class="kpi-val" style="font-size:28pt">2</div><div class="kpi-unit">건</div></div>
+      <div class="kpi-card" style="background:var(--orange-soft);border-color:rgba(217,119,6,.25)"><div class="kpi-label" style="color:var(--orange)">Mid Risk</div><div class="kpi-val" style="font-size:28pt;color:var(--orange)">3</div><div class="kpi-unit">건</div></div>
+      <div class="kpi-card green"><div class="kpi-label">Low Risk</div><div class="kpi-val" style="font-size:28pt">5</div><div class="kpi-unit">건</div></div>
+      <div class="kpi-card accent"><div class="kpi-label">총 요구사항</div><div class="kpi-val" style="font-size:28pt">10</div><div class="kpi-unit">개 전항목 매핑</div></div>
+    </div>
+    <table class="pt-table">
+      <thead><tr><td style="width:22mm">ID</td><td style="width:38mm">요구사항명</td><td style="width:16mm">위험도</td><td>핵심 감리 포인트 / 제안서 대응 방향</td></tr></thead>
+      <tbody>
+        <tr><td class="k">RFP-05</td><td class="v">소프트웨어 보안약점 진단 (국정원 인증 도구)</td><td class="c"><span class="bdg high">High</span></td><td class="v">진단도구 보유·활용 계획 필수 명시. 6년↑ SW개발+정보보안 인력 제안</td></tr>
+        <tr><td class="k">RFP-10</td><td class="v">감리원 변경 2일 이내 제출 제한</td><td class="c"><span class="bdg high">High</span></td><td class="v">변경 리스크 최소화 대안 제시. 협상 시 5~7일 연장 요구</td></tr>
+        <tr><td class="k">RFP-02</td><td class="v">요구정의단계 감리 포함 (최소 5일↑)</td><td class="c"><span class="bdg mid">Mid</span></td><td class="v">요구정의단계 위험요소 사전 식별 및 점검 포인트 구체화</td></tr>
+        <tr><td class="k">RFP-06</td><td class="v">기능점수(FP) 검증 및 비교표 작성</td><td class="c"><span class="bdg mid">Mid</span></td><td class="v">FP 검증 전문성 보유 입증, FP 측정도구 명시</td></tr>
+        <tr><td class="k">RFP-07</td><td class="v">웹 접근성·표준 준수 자동화 진단</td><td class="c"><span class="bdg mid">Mid</span></td><td class="v">자동화 도구 리스트 포함, K-WAHA 등 도구 활용</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-num">05 / 15</div>
+</div>
+
+<!-- ── SLIDE 06: 독소조항 분석 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Contract Risk · 독소조항</div>
+    <h2>계약 독소조항 분석 — 7건 (High 3 · Mid 3 · Low 1)</h2>
+    <div class="s-sub">협상에 의한 계약 절차 적용 — 계약 서명 전 반드시 협상 완료</div>
+  </div>
+  <div class="sc">
+    <table class="pt-table" style="margin-bottom:4mm">
+      <thead><tr><td style="width:16mm">위험도</td><td style="width:22mm">조항 ID</td><td style="width:44mm">조항 핵심 내용</td><td>위험 사유</td><td style="width:44mm">협상 요구사항 / 대응 방향</td></tr></thead>
+      <tbody>
+        <tr><td class="c"><span class="bdg high">High</span></td><td class="k">DS-01</td><td class="v">보안위반 → 부정당업자 등록 + 위약금 5%·3%·1% 차등</td><td class="v">최대 850만원 위약금 = 예상 수익의 77~106%. 1인 법인 치명적</td><td class="v">위약금 1% 단일화 또는 3% 상한 + 경고조치 선행</td></tr>
+        <tr><td class="c"><span class="bdg high">High</span></td><td class="k">DS-02</td><td class="v">감리원 변경 시 2일 이내 제출 (경조사 등 불가피한 경우 포함)</td><td class="v">실질적으로 이행 불가능. 증빙·대체인력협의·내부결재 최소 5일 소요</td><td class="v">변경 제출 기한 5~7영업일 연장 + 비상 예외 절차 도입</td></tr>
+        <tr><td class="c"><span class="bdg high">High</span></td><td class="k">DS-03</td><td class="v">현장감리 기간 모든 감리원 100% 상주 (예외조항 모호)</td><td class="v">1인 법인 동시 100% 상주 부담. 비상근 영역(DB·아키텍처) 상주 비현실적</td><td class="v">원격감리 20% 병행. 비상근 영역 사전문서검토 인정</td></tr>
+        <tr><td class="c"><span class="bdg mid">Mid</span></td><td class="k">DS-04</td><td class="v">제안서 내용 = 계약 효력 (계약서 우선 단서 있음)</td><td class="v">제안서 과잉 약속 금지. 분쟁 시 불리</td><td class="v">'발주기관 협의 후 조정 가능' 단서 명시</td></tr>
+        <tr><td class="c"><span class="bdg mid">Mid</span></td><td class="k">DS-06</td><td class="v">참여감리원 타 사업 일정 중복 금지</td><td class="v">1인 법인 상근자 한정 리스크</td><td class="v">비상근 감리원(DB·보안·아키텍처) 겸직 허용</td></tr>
+      </tbody>
+    </table>
+    <div class="callout red">
+      <div class="cl-label">협상 결렬 기준 (Bottom Line)</div>
+      <p>① DS-02(감리원변경 5영업일) + DS-01(위약금 3%↓) 양보 불가 시 수주 포기. ② 가격 140백만원(예정가 82.4%) 미만 강요 시 No Deal. ③ Bottom Line 145백만원 이하 불가.</p>
+    </div>
+  </div>
+  <div class="slide-num">06 / 15</div>
+</div>
+
+<!-- ── SLIDE 07: CSF ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">CSF · 핵심 성공 요소</div>
+    <h2>수주를 결정하는 4대 핵심 성공 요소</h2>
+    <div class="s-sub">Pain Point → CSF 연계 · 차등점수제 고득점 전략 기반</div>
+  </div>
+  <div class="sc">
+    <div class="csf-grid">
+      <div class="csf-card">
+        <div class="csf-no">CSF · 01</div>
+        <div class="csf-title">보안약점진단 전문성 입증 <span class="bdg high">평가 10+5점</span></div>
+        <div class="csf-body">국정원 인증 진단도구 보유 + 6년↑ SW개발+정보보안 경력 인력 제안. 점검내용(20점)+자동화도구(5점) 동시 공략. 차등점수제 1순위 결정 포인트.</div>
+      </div>
+      <div class="csf-card">
+        <div class="csf-no">CSF · 02</div>
+        <div class="csf-title">축산 IT·빅데이터 감리 경험 <span class="bdg info">평가 10점</span></div>
+        <div class="csf-body">공공기관 정보화 감리(특히 농림·축산 분야) 유사 실적 보유 증명. 분야별 전문성 항목(10점) 고득점. 외부 축산 IT 전문가 Pool 운영.</div>
+      </div>
+      <div class="csf-card">
+        <div class="csf-no">CSF · 03</div>
+        <div class="csf-title">통합감리 일정 관리 역량 <span class="bdg info">평가 10점</span></div>
+        <div class="csf-body">3개 사업(기간 상이 210~240일) 일정 통합 WBS 제시. 단일 의사결정 체계의 장점 구체적 기술. 감리일정 적정성(5점)+절차(5점) 만점 목표.</div>
+      </div>
+      <div class="csf-card">
+        <div class="csf-no">CSF · 04</div>
+        <div class="csf-title">자동화 도구 3종 구비 <span class="bdg info">평가 5점</span></div>
+        <div class="csf-body">① 보안약점진단도구 ② 웹접근성 자동평가도구 ③ 기능점수(FP) 측정도구. 기타지원(자동화도구 활용 5점) 만점. CSF-01과 시너지.</div>
+      </div>
+    </div>
+    <div class="callout gold">
+      <div class="cl-label">차등점수제 1순위 공략 포인트</div>
+      <p>기술 90%+가격 10%. 순위 간 2점 차등 = 가격평가 전체의 20%. 기술 1순위 확보 시 사실상 수주 결정. CSF-01(자동화도구) A등급 + 상근 100%(5점 만점) + 점검내용(20점) 집중. 85점 미만 협상 제외 → 기술 완성도 절대 우선.</p>
+    </div>
+  </div>
+  <div class="slide-num">07 / 15</div>
+</div>
+
+<!-- ── SLIDE 08: 영역별 감리 전략 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Audit Strategy · 영역별 감리 전략</div>
+    <h2>영역별 감리 중점 포인트 및 법령 준거</h2>
+    <div class="s-sub">근거: NIA-PAG 4장 · 구축운영지침 제49/53조 · DB표준화지침 제10조 · 행안부고시 제2024-53호</div>
+  </div>
+  <div class="sc">
+    <table class="pt-table">
+      <thead><tr><td style="width:14mm">영역</td><td>핵심 점검 항목</td><td style="width:32mm">법적 근거</td><td style="width:48mm">Pain Point 연계 · 차별화 포인트</td></tr></thead>
+      <tbody>
+        <tr><td class="k"><span class="bdg info">PM</span></td><td class="v">3개 사업 통합 WBS·일정·변경관리 · 요구사항추적표 · 위험관리</td><td class="v">NIA-PAG A22 / 구축운영지침 제49조</td><td class="v">Pain Point ②(통합일정) 대응. 1인 법인 단일 의사결정으로 신속한 일정 조정 강조.</td></tr>
+        <tr><td class="k"><span class="bdg info">AP</span></td><td class="v">기능요구사항 충족성 · 연계·인터페이스 정합성 · 통합시험 · FP 검증</td><td class="v">NIA-PAG 4장 / 전자정부법 제32조</td><td class="v">FP 검증 전문성(RFP-06) 입증. 축산정보e음·수급플랫폼 연계 집중 점검.</td></tr>
+        <tr><td class="k"><span class="bdg high">DB</span></td><td class="v">데이터 표준화 준수 · 빅데이터 품질 · 메타데이터 · DB 설계 적정성</td><td class="v">DB표준화지침 제10조 (법적 강제)</td><td class="v">Pain Point ③(빅데이터 전문성) 대응. 스마트축산빅데이터 3차 고도화 데이터 품질 집중.</td></tr>
+        <tr><td class="k"><span class="bdg info">AR</span></td><td class="v">기술적용계획표 · HW/SW 구성 · 성능 · 보안 아키텍처</td><td class="v">구축운영지침 제49조 (법적 강제)</td><td class="v">클라우드·MSA 설계 검증. 아키텍처 연속성 확보 점검.</td></tr>
+        <tr><td class="k"><span class="bdg high">SC</span></td><td class="v">SW보안약점 진단(국정원 인증 도구) · 개인정보보호 · 접근통제</td><td class="v">구축운영지침 제53조 (법적 강제)</td><td class="v">Pain Point ①(보안검증) 직접 대응. 2024 감사지적 재발방지 메시지. 3중 보안 점검 체계.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-num">08 / 15</div>
+</div>
+
+<!-- ── SLIDE 09: 예상문제점 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Risk Analysis · 예상 문제점</div>
+    <h2>RFP 분석 기반 예상 문제점 — 3대 위험 구간</h2>
+    <div class="s-sub">근거: RFP High Risk 항목 + 딥서치 발주기관 현안 이슈</div>
+  </div>
+  <div class="sc">
+    <div class="card-list">
+      <div class="card-item red">
+        <span class="ci-label">위험 ①<br>보안</span>
+        <div class="ci-body"><strong>보안약점진단 도구 미보유 시 감리 수행 불가</strong> (RFP-05) — 국가정보원 인증 진단도구 미보유 법인은 감리 수행 자격 상실. → CSF-01 대응: 진단도구 확보 및 진단원 자격 보유 인력 사전 확보. 제안서에 도구 보유 증빙 필수 첨부.</div>
+      </div>
+      <div class="card-item red">
+        <span class="ci-label">위험 ②<br>일정</span>
+        <div class="ci-body"><strong>3개 사업 통합 일정 수립 실패 시 감리 품질 저하</strong> — 사업 기간 상이(210~240일), 단계별 감리 시점 상이. 현장 100% 상주 요건(DS-03)과 충돌 가능. → CSF-03 대응: 통합 WBS 사전 수립, 원격 20% 병행 협상.</div>
+      </div>
+      <div class="card-item orange">
+        <span class="ci-label">위험 ③<br>계약</span>
+        <div class="ci-body"><strong>독소조항(DS-01·02) 협상 실패 시 재무·행정 리스크</strong> — 보안위약금 최대 850만원(수익 77~106%), 감리원변경 2일 제한(이행 불가). → T05 대응: 반드시 계약 전 협상 완료. 협상 결렬 시 수주 포기.</div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="cl-label">딥서치 기반 추가 위험 (T02 연계)</div>
+      <p>2024년 농식품부 종합감사 보안지적(네이트뉴스 2024.05.16) — 감리에서 보안 점검이 미흡할 경우 '또 다른 감사 지적' 발생 가능. 2026년 스마트축산본부 신설 + 신임 원장 체제(2026.03)로 정보화 사업 속도 조절 리스크 존재.</p>
+    </div>
+  </div>
+  <div class="slide-num">09 / 15</div>
+</div>
+
+<!-- ── SLIDE 10: 추진 전략 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Strategy · 추진 전략</div>
+    <h2>감리 추진 전략 — CSF 기반 핵심 전략 체계</h2>
+    <div class="s-sub">Search-First → 딥서치 → RDD 사이클 → 제안서 완성</div>
+  </div>
+  <div class="sc">
+    <div class="two-col">
+      <div>
+        <table class="pt-table">
+          <thead><tr><td>전략</td><td>핵심 기술 내용</td></tr></thead>
+          <tbody>
+            <tr><td class="k">전략 ①</td><td class="v"><strong>"2024 감사 지적 재발 방지 감리"</strong> — Pain Point ① 대응. 보안약점진단·개인정보보호·물리적보안 3중 점검. 감리 전 과정 보안 위반 Zero 목표.</td></tr>
+            <tr><td class="k">전략 ②</td><td class="v"><strong>"1인 법인 = 직접 감리 + 신속 의사결정"</strong> — Pain Point ② 대응. 단일 의사결정 체계로 3개 사업 통합 일정 신속 조정. 통합 WBS 기반 마일스톤 관리.</td></tr>
+            <tr><td class="k">전략 ③</td><td class="v"><strong>"축산 IT·빅데이터 전문성 차별화"</strong> — Pain Point ③ 대응. 축산·농림 분야 감리 경험 보유 인력 + 외부 전문가 Pool(DB·보안·아키텍처) 운영.</td></tr>
+            <tr><td class="k">전략 ④</td><td class="v"><strong>"자동화 도구 3종 + 하이브리드 감리"</strong> — CSF-01/04 대응. 보안약점+웹접근성+FP 도구. 원격 20% 병행 효율화. AI 자동화+전문가 진단 하이브리드.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="callout gold" style="margin-bottom:4mm">
+          <div class="cl-label">핵심 포지셔닝</div>
+          <p><strong>"1인 법인 = 직접 감리 + 신속 의사결정으로 3개 사업 통합감리 품질 보장 — 2024 감사 지적 재발 방지 감리 수행"</strong></p>
+        </div>
+        <div class="callout">
+          <div class="cl-label">경쟁 우위 포인트</div>
+          <p>① 상근 100% — RFP 상근 50%↑ 요건 초과 달성(5점 만점) ② 관리비 최소화로 MD당 단가 경쟁력 ③ 축산·빅데이터 외부 전문가 Pool ④ 단일 의사결정으로 3개 사업 통합 일정·위험 통합 관리</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">10 / 15</div>
+</div>
+
+<!-- ── SLIDE 11: 배점 전략 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Scoring · 배점기준 분석</div>
+    <h2>평가항목별 배점기준 분석 및 고득점 전략</h2>
+    <div class="s-sub">협상에 의한 계약 · 비계량 90% + 가격 10% · 차등점수제 2점</div>
+  </div>
+  <div class="sc">
+    <table class="pt-table">
+      <thead><tr><td style="width:38mm">평가항목</td><td style="width:18mm" class="c">배점</td><td>고득점 전략 · 제안서 기술 방향</td></tr></thead>
+      <tbody>
+        <tr><td class="k">점검내용 (위험요소+단계별)</td><td class="c">20점</td><td class="v"><strong>가장 큰 항목.</strong> 축평원 현안 반영: 2024 감사지적(보안), 스마트축산본부 신설(2026.01), 빅데이터 고도화 등 차별화</td></tr>
+        <tr><td class="k">기타지원 (품질+도구+추가)</td><td class="c">20점</td><td class="v">1인 법인 맞춤 품질관리(외부 검수) + 자동화도구 3종 명시 + 무상 추가 서비스(1회 추가 방문 등)</td></tr>
+        <tr><td class="k">감리인력구성 (분야+상근)</td><td class="c">15점</td><td class="v">5개 영역 1인↑ + 상근 100%(RFP 50%↑ 초과). 1인 법인 강점 극대화. 외부 Pool로 분야별 전문성 확보.</td></tr>
+        <tr><td class="k">분야별인력 (전문성+교육)</td><td class="c">15점</td><td class="v">축산·농림 분야 감리 경험 인력 우선 배치. 감리원 계속교육 이수 현황 증빙. 축산 IT 전문가 Pool 운영.</td></tr>
+        <tr><td class="k">총괄감리원</td><td class="c">10점</td><td class="v">수석감리원 자격 + 유사사업(공공기관 정보화 감리) 경력 집중 부각. 재직 6개월↑ 투입 1년↑ 요건 충족.</td></tr>
+        <tr><td class="k">점검방법</td><td class="c">10점</td><td class="v">AI 자동화 도구 + 전문가 진단 하이브리드 방법론. 기술적용계획표·과업이행여부 점검 방법론 구체화.</td></tr>
+        <tr><td class="k">감리일정·절차</td><td class="c">10점</td><td class="v">3개 사업 통합 WBS 제시. 1인 법인 신속 대응 체계 강조. 시정조치 확인 프로세스 구체화.</td></tr>
+        <tr><td class="k">가격평가</td><td class="c">10점</td><td class="v">85% 미만 협상 제외 → 기술 우선 전략. 권장 응찰가 150~153백만원(예정가 88~90%)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-num">11 / 15</div>
+</div>
+
+<!-- ── SLIDE 12: 인력 구성 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Team · 투입 인력 구성</div>
+    <h2>전담 감리원 편성 (안) — RFP 요건 충족 기준</h2>
+  </div>
+  <div class="sc">
+    <div class="kpi-grid col-4" style="margin-bottom:4mm">
+      <div class="kpi-card accent"><div class="kpi-label">총 투입 공수</div><div class="kpi-val">143</div><div class="kpi-unit">M/D (RFP 최소 요건 충족)</div></div>
+      <div class="kpi-card gold"><div class="kpi-label">상근감리원 비율</div><div class="kpi-val">58%+</div><div class="kpi-unit">RFP 50%↑ 요건 충족</div></div>
+      <div class="kpi-card"><div class="kpi-label">현장감리 최소</div><div class="kpi-val" style="font-size:20pt">5인</div><div class="kpi-unit">5개 영역 1인↑ 배치</div></div>
+      <div class="kpi-card"><div class="kpi-label">스탠바이 예비</div><div class="kpi-val" style="font-size:20pt">1명</div><div class="kpi-unit">집중투입 대비</div></div>
+    </div>
+    <table class="pt-table">
+      <thead><tr><td>역할</td><td>감리원 등급</td><td style="width:22mm">투입 M/D</td><td>담당 영역</td><td>RFP 요건 충족 근거</td></tr></thead>
+      <tbody>
+        <tr><td class="k"><strong>총괄 수석감리원</strong><br><span class="bdg gold">수석</span></td><td class="c">수석감리원</td><td class="c">21 M/D</td><td class="v">총괄·품질·사업관리</td><td class="v">법인 6개월↑ 재직 + 투입 1년↑ 요건 충족. 수석자격 + 유사 공공 감리 경력.</td></tr>
+        <tr><td class="k">응용 감리원<br><span class="bdg info">고급</span></td><td class="c">고급감리원</td><td class="c">21 M/D</td><td class="v">응용시스템 영역</td><td class="v">공공 응용 감리 실적 + FP 검증 경험 + CPE 이수 현황 증빙.</td></tr>
+        <tr><td class="k">DB 감리원<br><span class="bdg info">고급</span></td><td class="c">고급감리원</td><td class="c">16 M/D</td><td class="v">DB 영역 + 데이터 품질</td><td class="v">이기종 DBMS 감리 실적 + DB표준화지침 전문성. 빅데이터 품질 경험.</td></tr>
+        <tr><td class="k">아키텍처 감리원<br><span class="bdg info">고급</span></td><td class="c">고급감리원</td><td class="c">13 M/D</td><td class="v">아키텍처 영역</td><td class="v">MSA·클라우드 감리 경력 + 성능 진단 자격. HW/SW 구성 검증.</td></tr>
+        <tr><td class="k">보안 감리원<br><span class="bdg info">고급</span></td><td class="c">고급감리원</td><td class="c">16 M/D</td><td class="v">보안 영역</td><td class="v">보안약점진단 자격 + 개인정보보호 전문성. 국정원 인증 도구 활용.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-num">12 / 15</div>
+</div>
+
+<!-- ── SLIDE 13: 마일스톤 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Action Plan · 추진 일정</div>
+    <h2>향후 추진 일정 (마일스톤)</h2>
+  </div>
+  <div class="sc">
+    <table class="pt-table" style="margin-bottom:4mm">
+      <thead><tr><td style="width:36mm">단계</td><td style="width:28mm">목표 일정</td><td style="width:22mm">담당</td><td>주요 액션 및 체크포인트</td></tr></thead>
+      <tbody>
+        <tr><td class="k">딥서치 완료 (선행 필수)<br><span class="bdg low">완료</span></td><td class="v">~2026.06.16</td><td class="v">사업분석가</td><td class="v">딥서치 선행 완료 후 RFP 분석 착수 — 딥서치 없이 제안서 착수 절대 금지</td></tr>
+        <tr><td class="k">RFP 분석 완료<br><span class="bdg low">완료</span></td><td class="v">~2026.06.18</td><td class="v">사업분석가</td><td class="v">T01·T02·T03 완성 → 홍부장 브리핑 (딥서치 결과 포함)</td></tr>
+        <tr><td class="k">Go/No-Go 결정<br><span class="bdg low">완료</span></td><td class="v">~2026.06.16</td><td class="v">홍부장</td><td class="v">조건부 GO 확정. 원가분석 + 전략 검토 완료. 나라장터 공고번호·제출기한 확인 필수.</td></tr>
+        <tr><td class="k">제안서 초안 작성</td><td class="v">~2026.06.27</td><td class="v">사업분석가</td><td class="v">영역별 감리원 기술 내용 취합. 비상근 참여동의서 수령 병행. 홍부장 검토.</td></tr>
+        <tr><td class="k">홍부장 최종 승인</td><td class="v">~2026.06.29</td><td class="v">홍부장</td><td class="v">최종 검토, 보완 지시, 승인. 독소조항 협상 준비 문서 확정.</td></tr>
+        <tr><td class="k">제안서 최종 제출</td><td class="v">~2026.06.30</td><td class="v">홍부장</td><td class="v">나라장터 전자입찰 제출. 감리법인 등록·중소기업 확인서 유효기간 확인. 조달청 기술평가 위임.</td></tr>
+        <tr><td class="k">기술발표 준비</td><td class="v">~2026.07.05</td><td class="v">홍부장(PM)</td><td class="v">PM 발표 준비. Q&A 대비. 경쟁 분석 보완. 차등점수제 1순위 전략 발표 반영.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <div class="cl-label">입찰 자격 체크리스트</td>
+      <p>행정안전부 감리법인 등록 유효기간 확인 | 중소기업 확인서 유효기간 내 발급 | 신용평가등급 확인서 (BBB0↑) | 나라장터 공고번호·제출기한 확인 | 필수 서식 붙임 서류 준비 완료</p>
+    </div>
+  </div>
+  <div class="slide-num">13 / 15</div>
+</div>
+
+<!-- ── SLIDE 14: 참고자료 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">References · 참고 자료</div>
+    <h2>근거 자료 및 출처 목록</h2>
+  </div>
+  <div class="sc">
+    <table class="pt-table">
+      <thead><tr><td style="width:10mm">#</td><td style="width:24mm">문서 유형</td><td>문서명</td><td style="width:36mm">발행기관</td><td style="width:22mm">발행일 / 출처 등급</td></tr></thead>
+      <tbody>
+        <tr><td class="c">①</td><td class="v">제안요청서</td><td class="v">2026년도 정보화 사업 통합감리 RFP</td><td class="v">축산물품질평가원</td><td class="v">2026.06 / 1등급</td></tr>
+        <tr><td class="c">②</td><td class="v">감사 결과</td><td class="v">농식품부 종합감사 결과 (보안 규정 위반)</td><td class="v">네이트뉴스 · 백경뉴스</td><td class="v">2024.05.16 / 2등급</td></tr>
+        <tr><td class="c">③</td><td class="v">딥서치 자료</td><td class="v">축산물품질평가원 스마트축산본부 신설</td><td class="v">전자신문</td><td class="v">2026.01.12 / 2등급</td></tr>
+        <tr><td class="c">④</td><td class="v">법령·고시</td><td class="v">정보시스템 감리기준 (행안부고시 제2024-53호)</td><td class="v">행정안전부</td><td class="v">2024 / 1등급</td></tr>
+        <tr><td class="c">⑤</td><td class="v">법령·고시</td><td class="v">정보시스템 감리 발주·관리 가이드 (NIA-PAG)</td><td class="v">NIA</td><td class="v">2022.02 / 1등급</td></tr>
+        <tr><td class="c">⑥</td><td class="v">기관 홈페이지</td><td class="v">축산물품질평가원 기관 개요</td><td class="v">ekape.or.kr · 위키백과</td><td class="v">상시 / 1등급</td></tr>
+        <tr><td class="c">⑦</td><td class="v">수상 이력</td><td class="v">감사원 자체감사활동 표창 2건</td><td class="v">푸드뉴스</td><td class="v">2025.12.26 / 2등급</td></tr>
+      </tbody>
+    </table>
+    <div class="callout" style="margin-top:4mm">
+      <div class="cl-label">분석 방법론 및 출처 등급 기준</div>
+      <p>1등급(원본 공문서) / 2등급(공신력 언론) / 3등급(AI·추론 → 본문 금지) | RDD 적용 · Search-First 원칙 · Evidence-First</p>
+    </div>
+  </div>
+  <div class="slide-num">14 / 15</div>
+</div>
+
+<!-- ── SLIDE 15: 최종 결론 ── -->
+<div class="slide">
+  <div class="sh">
+    <div class="s-tag">Conclusion · 결론</div>
+    <h2>최종 판단 — 조건부 GO 권고 및 수주 핵심 전략</h2>
+  </div>
+  <div class="sc">
+    <div class="kpi-grid col-3" style="margin-bottom:4mm">
+      <div class="kpi-card green"><div class="kpi-label">최종 판단</div><div class="kpi-val" style="font-size:28pt">GO</div><div class="kpi-unit">조건부 수주 권고</div></div>
+      <div class="kpi-card accent"><div class="kpi-label">전략 핵심</div><div class="kpi-val" style="font-size:13pt;color:#fff;line-height:1.3">1인 법인<br>직접 감리</div><div class="kpi-unit">신속 의사결정 · 품질 보장</div></div>
+      <div class="kpi-card gold"><div class="kpi-label">목표 득점</div><div class="kpi-val" style="font-size:22pt">1순위</div><div class="kpi-unit">비계량 차등점수제</div></div>
+    </div>
+    <div class="card-list">
+      <div class="card-item gold">
+        <span class="ci-label">GO<br>근거 ①</span>
+        <div class="ci-body"><strong>순수 감리 용역 + 대기업 참여 제한.</strong> 개발·구현 업무 없음. 감리법인 전문 영역. 1인 법인 상근 100% 강점 극대화. 5개 영역 외부 Pool로 경쟁력 확보. (T02 딥서치 기반)</div>
+      </div>
+      <div class="card-item gold">
+        <span class="ci-label">GO<br>근거 ②</span>
+        <div class="ci-body"><strong>감리 수요 확실 + 수익성 확보 가능.</strong> 2024년 감사 보안지적으로 감리 필요성 인정. 권장 응찰가 150~153백만원, 수익률 5.6~7.7%. Bottom Line 145백만원 방어 가능. (T03 원가분석 기반)</div>
+      </div>
+      <div class="card-item gold">
+        <span class="ci-label">GO<br>근거 ③</span>
+        <div class="ci-body"><strong>차등점수제 1순위 가능 구조.</strong> 점검내용(20점)+감리인력(15점)+기타지원(20점)=55% 집중 공략. 상근 100%(5점 만점) + 자동화도구 3종(5점 만점) + 통합 WBS(10점 고득점)로 기술 1순위 목표. (T01·T04 기반)</div>
+      </div>
+    </div>
+    <div class="callout red" style="margin-top:3mm">
+      <div class="cl-label">계약 전 필수 협상 항목 (T05 연계)</div>
+      <p>DS-01(보안위약금 3%↓) · DS-02(감리원변경 5영업일) · DS-03(원격감리 20% 병행) — 위 3건 협상 실패 시 리스크 재평가 필요. 가격 Bottom Line 145백만원(예정가 85.3%) 미만 No Deal.</p>
+    </div>
+  </div>
+  <div class="slide-num">15 / 15</div>
+</div>
+
+</div><!-- /stack -->
+
+<script>
+function saveDoc(){
+  const d=new Date(),p=n=>String(n).padStart(2,'0');
+  const ds=`${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}`;
+  const blob=new Blob(['<!DOCTYPE html>\n'+document.documentElement.outerHTML],{type:'text/html;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=`${ds}_축산물품질평가원_통합감리_PT요약보고서.html`;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>

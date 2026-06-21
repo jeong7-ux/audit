@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>축산물품질평가원 · 통합감리 · 영역별 감리계획 초안</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0D2340;--navy-mid:#1A3A5C;--navy-light:#2B5083;
+  --gold:#C9922A;--gold-light:#F0C96A;--gold-soft:#FDF6E3;--gold-border:#EDD38A;
+  --red:#DC2626;--red-soft:#FEF2F2;
+  --orange:#D97706;--orange-soft:#FFFBEB;
+  --green:#059669;--green-soft:#ECFDF5;
+  --blue:#1D4ED8;--blue-soft:#EFF6FF;--blue-border:#93C5FD;
+  --purple:#7C3AED;--purple-soft:#F5F3FF;--purple-border:#C4B5FD;
+  --teal:#0D9488;--teal-soft:#F0FDFA;--teal-border:#99F6E4;
+  --ink:#111827;--ink-soft:#374151;--ink-mute:#6B7280;--ink-faint:#9CA3AF;
+  --border:#DDE1E9;--border-light:#EAEDF2;--surface:#F7F8FA;
+  --sans:'Pretendard Variable','Pretendard',sans-serif;
+  --serif:'DM Serif Display',serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{font-family:var(--sans);background:#e8eaf0;color:var(--ink);-webkit-font-smoothing:antialiased}
+.tb{position:fixed;top:0;left:0;right:0;height:52px;z-index:300;background:rgba(13,35,64,.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:8px;padding:0 16px}
+.tb-brand{font:700 13px var(--sans);color:#fff}
+.tb-sub{font:600 7.5px var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold-light);margin-left:8px}
+.tb-spacer{flex:1}
+.tb-print{height:28px;padding:0 12px;border-radius:4px;font:700 10px var(--sans);background:var(--gold);border:none;color:var(--navy);cursor:pointer}
+.stack{padding:68px 0 60px;display:flex;flex-direction:column;align-items:center;gap:24px}
+.sheet{width:210mm;min-height:297mm;background:#fff;border-radius:6px;box-shadow:0 4px 24px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden}
+.sheet-inner{flex:1;padding:12mm 14mm 8mm;position:relative}
+.page-mark{position:absolute;top:5mm;right:8mm;font:500 7pt var(--mono);letter-spacing:1.5pt;color:var(--ink-faint);text-transform:uppercase}
+.doc-hdr{background:var(--navy);padding:5mm 14mm 4mm;border-bottom:3px solid var(--gold);position:relative;flex-shrink:0}
+.doc-hdr::before{content:"";position:absolute;top:0;left:0;right:0;height:2.5mm;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold))}
+.doc-hdr .doc-cat{font:700 6.5pt var(--mono);letter-spacing:2.5pt;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.5mm}
+.doc-hdr h2{font:700 15pt var(--sans);color:#fff;letter-spacing:-.3px;line-height:1.25;margin-bottom:1.5mm}
+.doc-hdr .doc-sub{font:400 8pt var(--sans);color:rgba(255,255,255,.5);line-height:1.6}
+.doc-hdr .doc-meta{display:flex;gap:4mm;margin-top:3mm;flex-wrap:wrap}
+.dm-item{text-align:center;padding:2mm 4mm;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:4px}
+.dm-label{font:700 6pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--gold);margin-bottom:1mm}
+.dm-val{font:600 9.5pt var(--sans);color:#fff}
+.doc-ftr{background:var(--navy);padding:3mm 14mm;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);flex-shrink:0}
+.doc-ftr .ftr-l{font:700 7.5pt var(--sans);color:#fff}
+.doc-ftr .ftr-l span{font:500 6pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--gold-light);margin-left:6px}
+.doc-ftr .ftr-r{font:500 6pt var(--mono);letter-spacing:1pt;color:rgba(255,255,255,.35);text-transform:uppercase}
+.domain-tab{display:flex;gap:2mm;margin:3mm 0 5mm;flex-wrap:wrap}
+.domain-tab a{display:block;padding:2mm 4.5mm;border-radius:4pt;font:700 8.5pt var(--sans);text-decoration:none;color:var(--ink-mute);background:var(--surface);border:1px solid var(--border);transition:all .15s}
+.domain-tab a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.domain-tab a.sel{background:var(--navy);color:var(--gold-light);border-color:var(--navy)}
+.sec{margin:6mm 0 3.5mm}
+.sec-h{display:flex;align-items:center;gap:3.5mm;padding-bottom:2.5mm;margin-bottom:3.5mm;border-bottom:2px solid var(--border);position:relative}
+.sec-h::after{content:"";position:absolute;bottom:-2px;left:0;width:16mm;height:2px}
+.sec-h.qa::after{background:linear-gradient(90deg,var(--blue),transparent)}
+.sec-h.app::after{background:linear-gradient(90deg,var(--green),transparent)}
+.sec-h.db::after{background:linear-gradient(90deg,var(--purple),transparent)}
+.sec-h.arch::after{background:linear-gradient(90deg,var(--orange),transparent)}
+.sec-h.sec::after{background:linear-gradient(90deg,var(--red),transparent)}
+.sec-h .num{font:700 7.5pt var(--mono);letter-spacing:1.5pt;color:#fff;padding:2pt 7pt;border-radius:3pt;flex-shrink:0}
+.sec-h.qa .num{background:var(--blue)}
+.sec-h.app .num{background:var(--green)}
+.sec-h.db .num{background:var(--purple)}
+.sec-h.arch .num{background:var(--orange)}
+.sec-h.sec .num{background:var(--red)}
+.sec-h h3{font:700 12.5pt var(--sans);color:var(--navy);letter-spacing:-.2px}
+.sec-sub{margin:3mm 0 2mm}
+.sec-sub h4{font:700 10pt var(--sans);color:var(--navy-mid);display:flex;align-items:center;gap:2.5mm;margin-bottom:2mm}
+.sec-sub h4::before{content:"";display:inline-block;width:2pt;height:11pt;border-radius:2pt;flex-shrink:0}
+.sec-sub.qa h4::before{background:var(--blue)}
+.sec-sub.app h4::before{background:var(--green)}
+.sec-sub.db h4::before{background:var(--purple)}
+.sec-sub.arch h4::before{background:var(--orange)}
+.sec-sub.sec h4::before{background:var(--red)}
+.bdg{display:inline-block;font:700 6.5pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;padding:2pt 6pt;border-radius:3.5pt}
+.bdg.high{background:var(--red-soft);color:var(--red);border:1px solid rgba(220,38,38,.25)}
+.bdg.mid{background:var(--orange-soft);color:var(--orange);border:1px solid rgba(217,119,6,.25)}
+.bdg.low{background:var(--green-soft);color:var(--green);border:1px solid rgba(5,150,105,.25)}
+.bdg.info{background:#EBF0F8;color:var(--navy-light);border:1px solid #B8CCDF}
+.rfp-table{width:100%;border-collapse:collapse;margin:2mm 0 3.5mm;border:1px solid var(--border);border-radius:5px;overflow:hidden;font-size:8.5pt}
+.rfp-table thead tr{background:var(--navy)}
+.rfp-table thead td{padding:1.5mm 3mm;font:700 8pt var(--sans);color:var(--gold-light)}
+.rfp-table tbody tr{border-bottom:1px solid var(--border-light)}
+.rfp-table tbody tr:last-child{border-bottom:none}
+.rfp-table tbody tr:nth-child(even){background:var(--surface)}
+.rfp-table td{padding:2mm 3mm;line-height:1.6;vertical-align:top}
+.rfp-table td.phase{font:700 8pt var(--sans);color:var(--navy-mid);width:18mm}
+.rfp-table td.item{color:var(--ink-soft);width:40mm}
+.rfp-table td.check{color:var(--ink-soft)}
+.diff-box{background:var(--gold-soft);border:1px solid var(--gold-border);border-left:4px solid var(--gold);padding:3mm 4.5mm;border-radius:0 5px 5px 0;margin:2mm 0 3.5mm}
+.diff-box .diff-lbl{font:700 7pt var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold);margin-bottom:1mm}
+.diff-box ul{list-style:none;padding:0}
+.diff-box ul li{font:400 9pt var(--sans);color:var(--ink-soft);line-height:1.7;padding:1mm 0 1mm 3mm;position:relative}
+.diff-box ul li::before{content:"▸";position:absolute;left:0;color:var(--gold)}
+.phase-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin:2mm 0 3.5mm}
+.phase-card{border:1px solid var(--border);border-radius:5px;padding:3mm;border-top:3px solid}
+.phase-card.req{border-top-color:var(--blue)}
+.phase-card.design{border-top-color:var(--orange)}
+.phase-card.end{border-top-color:var(--green)}
+.phase-card .p-label{font:700 6.5pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;margin-bottom:1mm}
+.phase-card.req .p-label{color:var(--blue)}
+.phase-card.design .p-label{color:var(--orange)}
+.phase-card.end .p-label{color:var(--green)}
+.phase-card .p-title{font:700 9pt var(--sans);color:var(--navy);margin-bottom:1.5mm}
+.phase-card .p-body{font:400 8pt var(--sans);color:var(--ink-soft);line-height:1.65}
+.plan-card{background:#fff;border:1px solid var(--border);border-radius:5px;padding:3mm 4mm;margin:2mm 0;border-left:4px solid}
+.plan-card.qa{border-left-color:var(--blue)}
+.plan-card.app{border-left-color:var(--green)}
+.plan-card.db{border-left-color:var(--purple)}
+.plan-card.arch{border-left-color:var(--orange)}
+.plan-card.sec{border-left-color:var(--red)}
+.plan-card .pc-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5mm}
+.plan-card .pc-name{font:700 10pt var(--sans);color:var(--navy)}
+.plan-card .pc-bdg{font:600 6.5pt var(--mono);letter-spacing:1pt;text-transform:uppercase;padding:1pt 5pt;border-radius:3pt;background:var(--surface);color:var(--ink-mute);border:1px solid var(--border)}
+.plan-card .pc-body{font:400 8.5pt var(--sans);color:var(--ink-soft);line-height:1.7}
+@media print{
+  @page{size:A4 portrait;margin:0}
+  html,body{background:#fff}
+  .tb{display:none}
+  .stack{padding:0;gap:0}
+  .sheet{width:auto;min-height:297mm;box-shadow:none;border-radius:0;page-break-after:always}
+  .sheet:last-child{page-break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="tb">
+  <span class="tb-brand">전문 1인 감리회사<span class="tb-sub">영역별 감리계획 초안</span></span>
+  <div class="tb-spacer"></div>
+  <button class="tb-print" onclick="window.print()">⬇ PDF</button>
+</div>
+<div class="stack">
+
+<!-- COVER -->
+<div class="sheet" style="min-height:auto">
+  <div style="background:var(--navy);padding:30mm 15mm 20mm;border-bottom:5px solid var(--gold);text-align:center">
+    <div style="font-family:var(--mono);font-size:11pt;letter-spacing:3.5pt;text-transform:uppercase;color:var(--gold-light);margin-bottom:8mm">전문 1인 감리회사</div>
+    <div style="display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font:700 9pt/1 var(--mono);letter-spacing:2pt;text-transform:uppercase;padding:6pt 12pt;border-radius:4pt;margin-bottom:8mm">Domain Audit Plans · 2026</div>
+    <h1 style="font-family:var(--serif);font-weight:400;font-size:36pt;color:#fff;line-height:1.3;margin-bottom:8mm">
+      축산물품질평가원<br>
+      <em style="color:var(--gold-light);font-style:normal">2026년 정보화 사업 통합감리</em><br>
+      영역별 감리계획 초안
+    </h1>
+    <div style="font-family:var(--sans);font-weight:600;font-size:15pt;color:rgba(255,255,255,.8)">5대 영역: 품질보증 · 응용시스템 · DB · 시스템아키텍처 · 보안</div>
+  </div>
+  <div style="flex:1;padding:25mm 20mm 30mm;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center">
+    <div style="font-family:var(--sans);font-weight:400;font-size:12.5pt;color:var(--ink-soft);line-height:1.8;max-width:140mm;margin-bottom:30mm">
+      RFP 요구사항 + 딥서치 검증 근거 기반 영역별 감리계획<br>
+      <b>각 영역별: 감리 범위 → 단계별 점검 포인트(요구정의/설계/종료) → 차별화 전략 → 체크리스트 → 투입 인력</b>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8mm;border-top:1px solid var(--border);padding-top:12mm;text-align:center;width:100%;max-width:150mm">
+      <div><div style="font:700 8.5pt/1 var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold);margin-bottom:4mm">문서 버전</div><div style="font-family:var(--sans);font-size:12.5pt;font-weight:600;color:var(--navy)">v1.0</div></div>
+      <div><div style="font:700 8.5pt/1 var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold);margin-bottom:4mm">작성</div><div style="font-family:var(--sans);font-size:12.5pt;font-weight:600;color:var(--navy)">사업분석가</div></div>
+      <div><div style="font:700 8.5pt/1 var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold);margin-bottom:4mm">작성일</div><div style="font-family:var(--sans);font-size:12.5pt;font-weight:600;color:var(--navy)">2026.06.16</div></div>
+    </div>
+  </div>
+  <div style="background:var(--surface);color:var(--ink-soft);padding:8mm 22mm;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);flex-shrink:0">
+    <div style="font-family:var(--sans);font-weight:700;font-size:11pt;color:var(--navy)">전문 1인 감리회사 <span style="font-size:8pt;font-weight:500;color:var(--navy-light);letter-spacing:1.5pt;text-transform:uppercase;margin-left:8px;font-family:var(--mono)">Internal Document</span></div>
+    <div style="font:500 8pt/1 var(--mono);letter-spacing:1.5pt;color:var(--ink-mute);text-transform:uppercase">Domain Audit Plans · Audit Proposal Preparation</div>
+  </div>
+</div>
+
+<!-- ====== DOMAIN 1: 품질보증 ====== -->
+<div class="sheet">
+  <div class="doc-hdr">
+    <div class="doc-cat">DOMAIN 01 · 5대 영역 중 첫 번째</div>
+    <h2>1. 품질보증 부문 감리계획</h2>
+    <div class="doc-sub">RFP 점검항목: 사업목표·방법론·절차·표준 준수 → 품질보증활동 → 추적성·일관성·시험 → 인수운영</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">RFP 항목</div><div class="dm-val">품질보증 7+7+1항목</div></div>
+      <div class="dm-item"><div class="dm-label">담당자</div><div class="dm-val">홍부장 (수석감리원)</div></div>
+      <div class="dm-item"><div class="dm-label">핵심 가치</div><div class="dm-val">통합 품질 게이트</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner">
+    <div class="page-mark">DOMAIN 01 · 품질보증</div>
+
+    <div class="sec">
+      <div class="sec-h qa"><span class="num">01</span><h3>감리 범위 및 개요</h3></div>
+      <div style="background:var(--blue-soft);border:1px solid var(--blue-border);border-left:4px solid var(--blue);padding:3mm 4.5mm;border-radius:0 5px 5px 0;margin:2mm 0">
+        <p style="font:400 9.5pt var(--sans);color:var(--ink-soft);line-height:1.7"><b>범위:</b> 사업 전반의 품질 관리 체계와 활동의 적정성 점검. 3개 대상사업(계열화+e음/수급플랫폼/빅데이터)의 통합 품질 게이트 운영. <b>특화점:</b> 스마트축산본부 신설에 따른 조직·업무 변화를 품질 관리 체계에 반영 여부 점검.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h qa"><span class="num">02</span><h3>단계별 감리 점검 포인트</h3></div>
+      <div class="phase-grid">
+        <div class="phase-card req">
+          <div class="p-label">Phase 1 · 요구정의</div>
+          <div class="p-title">사업 기반 확립 점검</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 사업목표 수립 여부 · 방법론 및 절차·표준 수립 여부 · 반복계획 적정성 · 품질보증활동 계획 · 총괄시험 계획<br>
+            <b>1인 법인 차별화:</b> 사업 초기 단일 의사결정권자가 직접 품질 기준 확립 → 의사소통 비용 최소화
+          </div>
+        </div>
+        <div class="phase-card design">
+          <div class="p-label">Phase 2 · 설계 (중간감리)</div>
+          <div class="p-title">프로세스 준수 · 산출물 품질</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 방법론·표준 준수 여부 · 산출물 간 추적성·일관성 · 품질보증활동 수행 여부 · 변경관리 적정성 · 위험관리 적정성<br>
+            <b>연계:</b> 2024 감사 지적(보안·복무) 관련 품질 프로세스 개선 이행 여부 확인
+          </div>
+        </div>
+        <div class="phase-card end">
+          <div class="p-label">Phase 3 · 종료</div>
+          <div class="p-title">최종 품질 검증</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 사용자요구사항 충분 반영 여부 · 시험계획 적정성 · 사업목표 달성 여부 · 교육계획 및 인수운영조직 구성 적정성<br>
+            <b>산출물:</b> 사업관리 종합의견(진척/위험/변경/품질) 포함 감리수행결과보고서 제출
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h qa"><span class="num">03</span><h3>RFP 점검항목 매핑 · 체크리스트</h3></div>
+      <table class="rfp-table">
+        <thead><tr><td style="width:16mm">감리시점</td><td style="width:44mm">RFP 점검항목</td><td>체크리스트 세부 항목 (본사 차별화)</td></tr></thead>
+        <tbody>
+          <tr><td class="phase" rowspan="4">착수·계획</td><td class="item">범위관리체계</td><td class="check">3개 사업 통합 범위 정의서 검토. 사업 간 중복/누락 식별</td></tr>
+          <tr><td class="item">일정관리체계</td><td class="check">통합 WBS 기반 3개 사업(240/210/210일) 마일스톤 연계성 검증</td></tr>
+          <tr><td class="item">위험관리체계</td><td class="check">2024 감사 지적 사항 위험 등록 및 관리 계획 확인</td></tr>
+          <tr><td class="item">품질관리체계</td><td class="check">단일 PM 체계의 품질 일관성 확보 방안 검증</td></tr>
+          <tr><td class="phase" rowspan="3">실행·통제</td><td class="item">범위·진척·인력</td><td class="check">변경 요청 대비 실제 반영 추적. 1인 법인 변경 리스크 최소화 검증</td></tr>
+          <tr><td class="item">의사소통관리</td><td class="check">발주기관·사업자 간 단일 연락 체계 효과성 확인</td></tr>
+          <tr><td class="item">위험·품질관리</td><td class="check">위험 등록부 업데이트 주기. 품질 메트릭 측정 및 개선 활동</td></tr>
+          <tr><td class="phase">종료</td><td class="item">요구사항 반영</td><td class="check">요구사항 대비표 기반 100% 추적성 검증. 미반영 사항 사유 확인</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diff-box">
+      <div class="diff-lbl">품질보증 차별화 전략</div>
+      <ul>
+        <li><b>통합 품질 게이트:</b> 3개 사업 각 단계별 통합 게이트 체크. 하나의 사업이 지연되어도 전체 일정 영향 최소화 방안 점검</li>
+        <li><b>1인 법인 품질 장점:</b> 단일 PM이 3개 사업 품질 수준을 직접 일괄 관리 → 대형 법인 대비 품질 편차 최소화</li>
+        <li><b>컨설팅형 품질 조언:</b> 단순 부적합 판정 → 프로세스 개선 방향까지 제시 (박수진 원장 '데이터 기반 행정 지능화'와 연계)</li>
+        <li><b>산출물 자동 추적:</b> 요구사항-설계-구현-시험 간 2레벨 추적성 매트릭스 자동 생성 도구 활용</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h qa"><span class="num">04</span><h3>투입 인력 계획</h3></div>
+      <div class="plan-card qa">
+        <div class="pc-h"><span class="pc-name">품질보증 감리원</span><span class="pc-bdg">상근 100%</span></div>
+        <div class="pc-body">
+          <b>홍부장 (수석감리원, PM 겸임)</b> · 15년 경력 · 감리 50+회 · SW사업자/발주자/감리자 3자 경험 보유<br>
+          <b>역할:</b> 3개 사업 통합 품질 게이트 운영 · 단계별 게이트 체크 · 사업관리 보고서 총괄 · 발주기관 보고<br>
+          <b>투입률:</b> 사업 전 기간 상근 100% · 단계별 집중도: 착수 30% / 중간 40% / 종료 30%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>DOMAIN 01 · 품질보증</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ====== DOMAIN 2: 응용시스템 ====== -->
+<div class="sheet">
+  <div class="doc-hdr">
+    <div class="doc-cat">DOMAIN 02 · 5대 영역 중 두 번째</div>
+    <h2>2. 응용시스템 부문 감리계획</h2>
+    <div class="doc-sub">RFP 점검항목: 요구분석 → 분석·설계 → 구현 → 시험 → 전개 · 사용자 요구사항→기능 구현 추적</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">RFP 항목</div><div class="dm-val">응용 16+항목</div></div>
+      <div class="dm-item"><div class="dm-label">담당자</div><div class="dm-val">홍부장+외부 전문가</div></div>
+      <div class="dm-item"><div class="dm-label">핵심 가치</div><div class="dm-val">비즈니스-기능 정합성</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner">
+    <div class="page-mark">DOMAIN 02 · 응용시스템</div>
+
+    <div class="sec">
+      <div class="sec-h app"><span class="num">01</span><h3>감리 범위 및 개요</h3></div>
+      <div style="background:var(--green-soft);border:1px solid rgba(5,150,105,.2);border-left:4px solid var(--green);padding:3mm 4.5mm;border-radius:0 5px 5px 0;margin:2mm 0">
+        <p style="font:400 9.5pt var(--sans);color:var(--ink-soft);line-height:1.7"><b>범위:</b> 3개 대상사업의 비즈니스 요구사항이 시스템 기능으로 정확히 구현되었는지 점검. <b>대상사업별 특성:</b> ①계열화+e음=축산 계열화 업무 + 이력정보 ②수급플랫폼=물량·가격·수급 예측 ③빅데이터=AI·데이터 분석 서비스. <b>특화점:</b> 박수진 원장 경영방침 '데이터 연계·행정지능화'를 기능 구현 수준에서 검증.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h app"><span class="num">02</span><h3>단계별 감리 점검 포인트</h3></div>
+      <div class="phase-grid">
+        <div class="phase-card req">
+          <div class="p-label">Phase 1 · 요구정의</div>
+          <div class="p-title">요구사항 분석 검증</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 현행 업무 분석 충분성 · 요구사항 도출·분석 적정성 · 유스케이스 모형 상세화 · UI 프로토타이핑 계획<br>
+            <b>3대 사업별 특화 체크:</b> 사업1(계열화)=축산 계열화 프로세스 누락 여부 · 사업2(수급)=물량예측 알고리즘 요건 · 사업3(빅데이터)=AI 모델 요구사항 명확성
+          </div>
+        </div>
+        <div class="phase-card design">
+          <div class="p-label">Phase 2 · 설계 (중간감리)</div>
+          <div class="p-title">설계 상세 · 기능 구현</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 업무 상세 분석 충분성 · UI 편의성(프로토타이핑) · 인터페이스 설계 적정성 · 기능 구현 완전성 · 추적성·일관성<br>
+            <b>차별화:</b> 사용자 관점 UX 평가 병행. 축산 현장(농가·지자체) 사용성 검증 의견 청취
+          </div>
+        </div>
+        <div class="phase-card end">
+          <div class="p-label">Phase 3 · 종료</div>
+          <div class="p-title">시험·전환·인수</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 단위·통합·시스템 시험 수행 및 검증 · 시험결과 관리·개선 · 시스템 전환 전략 · 사용자 교육 · 인수 운영조직<br>
+            <b>산출물:</b> 웹 접근성 자동화평가+전문가 진단 리포트 (종료단계 보고서 포함)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h app"><span class="num">03</span><h3>RFP 점검항목 매핑 · 체크리스트</h3></div>
+      <table class="rfp-table">
+        <thead><tr><td style="width:16mm">감리시점</td><td style="width:44mm">RFP 점검항목</td><td>체크리스트 세부 항목</td></tr></thead>
+        <tbody>
+          <tr><td class="phase" rowspan="5">요구분석</td><td class="item">현행 업무 분석</td><td class="check">3개 사업 각각 현행 업무 분석 및 문제점 해결방안 제시 여부</td></tr>
+          <tr><td class="item">요구사항 도출</td><td class="check">사용자(농가·지자체·축평원 내부) 요구사항 도출의 충분성</td></tr>
+          <tr><td class="item">유스케이스 모형</td><td class="check">핵심 비즈니스 유스케이스 식별 및 상세화 수준</td></tr>
+          <tr><td class="item">UI 프로토타이핑</td><td class="check">프로토타이핑 계획 수립 여부. 사용자 피드백 반영 체계</td></tr>
+          <tr><td class="item">분석 클래스</td><td class="check">개념 수준 분석 클래스 도출 충분성</td></tr>
+          <tr><td class="phase" rowspan="4">분석·설계</td><td class="item">업무 상세 분석</td><td class="check">요구사항→설계 간 추적성. 사업3(빅데이터) AI 모델 요건과 설계 연계</td></tr>
+          <tr><td class="item">UI 편의성</td><td class="check">화면 구성·내비게이션·보고서 편의성 설계 여부</td></tr>
+          <tr><td class="item">인터페이스</td><td class="check">내·외부 시스템(축산이력·스마트축산·농식품부 등) 인터페이스 설계</td></tr>
+          <tr><td class="item">기능 구현</td><td class="check">핵심 기능 구현 완전성. 단위시험 결과 연계 검증</td></tr>
+          <tr><td class="phase" rowspan="4">시험·전개</td><td class="item">통합·시스템 시험</td><td class="check">3개 사업 간 통합 시험 시나리오. 시험 결과 관리 및 개선</td></tr>
+          <tr><td class="item">시스템 전환</td><td class="check">기존 시스템(e음·수급·빅데이터) 전환 전략 적정성</td></tr>
+          <tr><td class="item">사용자 교육</td><td class="check">사용자(농가·지자체) 교육 계획 및 실시 여부</td></tr>
+          <tr><td class="item">인수운영조직</td><td class="check">축평원 내 인수운영조직 구성 및 전이 계획 적정성</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diff-box">
+      <div class="diff-lbl">응용시스템 차별화 전략</div>
+      <ul>
+        <li><b>축산 IT 특화 감리:</b> 계열화 프로세스·축산물이력·수급예측·AI 양돈 등 축산 IT 도메인 지식 보유 외부 전문가 Pool 활용</li>
+        <li><b>사업별 맞춤 체크리스트:</b> 3개 사업 각각의 업무 특성을 반영한 차별화된 유스케이스 검증. 일반적 체크리스트가 아닌 '축산 특화' 검증</li>
+        <li><b>웹 접근성 하이브리드 진단:</b> 자동화평가도구(K-WAH 등) + 전문가 수동 진단 병행. 종료단계 보고서 포함</li>
+        <li><b>현장 사용성 검증:</b> 필요시 축산 현장(농가·축산조합) 방문 또는 원격 사용성 테스트 제안</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h app"><span class="num">04</span><h3>투입 인력 계획</h3></div>
+      <div class="plan-card app">
+        <div class="pc-h"><span class="pc-name">응용시스템 감리원</span><span class="pc-bdg">상근 100%</span></div>
+        <div class="pc-body">
+          <b>홍부장 + 외부 전문가 1~2인 (축산 IT 분야)</b><br>
+          <b>홍부장 역할:</b> 응용 요구사항 검증 총괄 · 사업자 면담 · UI/UX 점검 · 요구사항 추적성 검증<br>
+          <b>외부 전문가 역할:</b> 계열화/e음 업무 프로세스 검증 · 수급예측 알고리즘 검토 · AI/빅데이터 모델 적정성 검토 (필요시)<br>
+          <b>투입률:</b> 착수 20% / 중간 50% / 종료 30%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>DOMAIN 02 · 응용시스템</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ====== DOMAIN 3: 데이터베이스 ====== -->
+<div class="sheet">
+  <div class="doc-hdr">
+    <div class="doc-cat">DOMAIN 03 · 5대 영역 중 세 번째</div>
+    <h2>3. 데이터베이스 부문 감리계획</h2>
+    <div class="doc-sub">RFP 점검항목: 데이터 모델링 → 상세설계 → 구현(테이블·성능·보안·코드) → 백업/복구 → 데이터 전환</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">RFP 항목</div><div class="dm-val">DB 10+항목</div></div>
+      <div class="dm-item"><div class="dm-label">담당자</div><div class="dm-val">홍부장+DB 전문가</div></div>
+      <div class="dm-item"><div class="dm-label">핵심 가치</div><div class="dm-val">데이터 표준화·품질</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner">
+    <div class="page-mark">DOMAIN 03 · 데이터베이스</div>
+
+    <div class="sec">
+      <div class="sec-h db"><span class="num">01</span><h3>감리 범위 및 개요</h3></div>
+      <div style="background:var(--purple-soft);border:1px solid var(--purple-border);border-left:4px solid var(--purple);padding:3mm 4.5mm;border-radius:0 5px 5px 0;margin:2mm 0">
+        <p style="font:400 9.5pt var(--sans);color:var(--ink-soft);line-height:1.7"><b>범위:</b> 3개 사업의 데이터 모델링·설계·구축·관리 전반. <b>특화점:</b> 빅데이터 플랫폼 고도화(3차)의 데이터 표준화(DB표준화지침 제10조 기반 2레벨 체크리스트) · 스마트축산 데이터 연계(축산빅데이터·AI) · 수급플랫폼의 실시간 데이터 품질. <b>딥서치 근거:</b> 빅데이터 표준화 가이드북(2024.12) · 데이터 연계·활용 지원사업 선정(2026).</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h db"><span class="num">02</span><h3>단계별 감리 점검 포인트</h3></div>
+      <div class="phase-grid">
+        <div class="phase-card req">
+          <div class="p-label">Phase 1 · 요구정의</div>
+          <div class="p-title">데이터 요건·모델링</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 업무 관련 데이터 식별 충분성 · 엔티티 클래스 정제 · 논리/물리 데이터 모델링 적정성 · 표준화 계획<br>
+            <b>사업3 집중:</b> 빅데이터 플랫폼의 데이터 소스 식별(축산이력·유통·경락·AI) 및 수집·저장 계획 검증
+          </div>
+        </div>
+        <div class="phase-card design">
+          <div class="p-label">Phase 2 · 설계 (중간감리)</div>
+          <div class="p-title">DB 상세설계 · 성능</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 테이블·성능·보안·코드 상세설계 · 백업·복구 대책 · 초기데이터 구축 계획 · 기존 데이터 전환 계획<br>
+            <b>차별화:</b> DB표준화지침 제10조 2레벨 체크리스트 적용. 3개 사업 간 데이터 표준 일관성 검증
+          </div>
+        </div>
+        <div class="phase-card end">
+          <div class="p-label">Phase 3 · 종료</div>
+          <div class="p-title">DB 구현·이관 검증</div>
+          <div class="p-body">
+            <b>주요 점검:</b> DB 테이블 구현 적정성 · 성능 고려 구현 여부 · 데이터 접근권한 및 통제 구현 · 단위 시험 실시<br>
+            <b>산출물:</b> 데이터 전환 결과 검증 보고서 · 백업·복구 시험 결과 확인
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h db"><span class="num">03</span><h3>RFP 점검항목 매핑 · 체크리스트</h3></div>
+      <table class="rfp-table">
+        <thead><tr><td style="width:16mm">감리시점</td><td style="width:44mm">RFP 점검항목</td><td>체크리스트 세부 항목</td></tr></thead>
+        <tbody>
+          <tr><td class="phase" rowspan="4">분석·설계</td><td class="item">데이터 식별</td><td class="check">3개 사업 데이터 요구사항 식별 충분성. 사업3 데이터 소스 매핑</td></tr>
+          <tr><td class="item">데이터 모델링</td><td class="check">논리/물리 ERD 적정성. 표준화(도메인·코드) 적용 검증</td></tr>
+          <tr><td class="item">유스케이스 정제</td><td class="check">유스케이스와 데이터 모델 간 정합성</td></tr>
+          <tr><td class="item">DB 상세설계</td><td class="check">테이블·인덱스·파티셔닝·보안·코드 설계 적정성</td></tr>
+          <tr><td class="phase" rowspan="4">구현</td><td class="item">테이블 구현</td><td class="check">설계 대비 구현 정합성. 데이터 타입·제약조건 적정성</td></tr>
+          <tr><td class="item">성능</td><td class="check">인덱스 전략·쿼리 최적화·파티셔닝 적용 여부</td></tr>
+          <tr><td class="item">보안</td><td class="check">접근권한·통제 구현. 개인정보 암호화·마스킹 적용</td></tr>
+          <tr><td class="item">단위시험</td><td class="check">DB 단위시험 시나리오·결과 검증</td></tr>
+          <tr><td class="phase" rowspan="3">종료</td><td class="item">백업·복구</td><td class="check">백업 정책·주기·복구 시나리오 수립 및 검증</td></tr>
+          <tr><td class="item">데이터 전환</td><td class="check">기존 데이터→신규 DB 전환 계획 및 결과 검증</td></tr>
+          <tr><td class="item">초기데이터 구축</td><td class="check">초기데이터 구축 완료 및 품질 검증</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diff-box">
+      <div class="diff-lbl">데이터베이스 차별화 전략</div>
+      <ul>
+        <li><b>빅데이터 특화 감리:</b> 사업3(스마트축산 빅데이터 고도화)의 데이터 수집·저장·분석 파이프라인 전반 점검. AI 모델 학습 데이터 품질 검증</li>
+        <li><b>DB표준화지침 2레벨 체크리스트:</b> 축평원 DB표준화지침 제10조 기반. 3개 사업 공통 데이터 표준 일관성 확보</li>
+        <li><b>데이터 품질 메트릭:</b> 완전성·정확성·일관성·적시성 4대 품질 차원 측정. 스마트축산 데이터 신뢰도 확보</li>
+        <li><b>데이터 연계 검증:</b> 축평원 내부(축산이력·등급·유통) + 외부(농식품부·지자체) 데이터 연계 인터페이스 점검</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h db"><span class="num">04</span><h3>투입 인력 계획</h3></div>
+      <div class="plan-card db">
+        <div class="pc-h"><span class="pc-name">데이터베이스 감리원</span><span class="pc-bdg">상근 100%</span></div>
+        <div class="pc-body">
+          <b>홍부장 (DB 감리 총괄) + 외부 DB 전문가 1인</b><br>
+          <b>홍부장:</b> 데이터 모델링 검증 · 표준화 체크리스트 운영 · 데이터 전환 검증<br>
+          <b>외부 DB 전문가:</b> 빅데이터 플랫폼 아키텍처 검증 · 데이터 파이프라인 검토 · 성능 튜닝 평가<br>
+          <b>투입률:</b> 착수 20% / 중간 50% / 종료 30%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>DOMAIN 03 · 데이터베이스</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ====== DOMAIN 4: 시스템아키텍처 ====== -->
+<div class="sheet">
+  <div class="doc-hdr">
+    <div class="doc-cat">DOMAIN 04 · 5대 영역 중 네 번째</div>
+    <h2>4. 시스템아키텍처 부문 감리계획</h2>
+    <div class="doc-sub">RFP 점검항목: 환경 분석 → 개념 아키텍처 → 최종 설계 → 도입·설치 → 검증 → 운영 준비</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">RFP 항목</div><div class="dm-val">아키텍처 8+항목</div></div>
+      <div class="dm-item"><div class="dm-label">담당자</div><div class="dm-val">홍부장+아키텍처 전문가</div></div>
+      <div class="dm-item"><div class="dm-label">핵심 가치</div><div class="dm-val">확장성·클라우드 적정성</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner">
+    <div class="page-mark">DOMAIN 04 · 시스템아키텍처</div>
+
+    <div class="sec">
+      <div class="sec-h arch"><span class="num">01</span><h3>감리 범위 및 개요</h3></div>
+      <div style="background:var(--orange-soft);border:1px solid rgba(217,119,6,.2);border-left:4px solid var(--orange);padding:3mm 4.5mm;border-radius:0 5px 5px 0;margin:2mm 0">
+        <p style="font:400 9.5pt var(--sans);color:var(--ink-soft);line-height:1.7"><b>범위:</b> 3개 사업의 HW·SW·네트워크 환경 적정성 점검. <b>특화점:</b> 사업3(빅데이터)의 클라우드/빅데이터 아키텍처 적정성 · 사업1(계열화+e음)의 기존 시스템과의 통합 아키텍처 · 사업2(수급플랫폼)의 실시간 데이터 처리 아키텍처. <b>NIA 가이드 준용:</b> 클라우드 정보화사업 감리 점검가이드(2016) 참조.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h arch"><span class="num">02</span><h3>단계별 감리 점검 포인트</h3></div>
+      <div class="phase-grid">
+        <div class="phase-card req">
+          <div class="p-label">Phase 1 · 요구정의</div>
+          <div class="p-title">아키텍처 방향성</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 현행 운영 환경 분석 충분성 · 개념 아키텍처 수립 여부 · 아키텍처 프로토타이핑을 통한 기술 검증 계획(PoC)<br>
+            <b>특화 체크:</b> 빅데이터 플랫폼 아키텍처 방향성(Hadoop/Spark/클라우드 등) 검증
+          </div>
+        </div>
+        <div class="phase-card design">
+          <div class="p-label">Phase 2 · 설계 (중간감리)</div>
+          <div class="p-title">상세 아키텍처 설계</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 최종 아키텍처 정의 및 설계 적정성 · 시스템 도입·설치 계획 · 보안 환경 구축 계획 · 구성 요소 검증<br>
+            <b>연계:</b> 3개 사업 간 시스템 연계 아키텍처. 빅데이터→수급→e음 데이터 흐름 설계
+          </div>
+        </div>
+        <div class="phase-card end">
+          <div class="p-label">Phase 3 · 종료</div>
+          <div class="p-title">운영 환경 검증</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 시스템 도입·설치 완료 및 보안 환경 구축 충분성 · 구성 요소 검증 수행 · 시스템 시험 계획 이행<br>
+            <b>산출물:</b> 운영 환경 설치·배포 완료 확인서. 시스템 전환 수행 적정성
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h arch"><span class="num">03</span><h3>RFP 점검항목 매핑 · 체크리스트</h3></div>
+      <table class="rfp-table">
+        <thead><tr><td style="width:16mm">감리시점</td><td style="width:44mm">RFP 점검항목</td><td>체크리스트 세부 항목</td></tr></thead>
+        <tbody>
+          <tr><td class="phase" rowspan="4">분석·설계</td><td class="item">환경 분석</td><td class="check">현행 HW·SW·네트워크 운영 환경 분석 충분성. 성능·용량 분석</td></tr>
+          <tr><td class="item">개념 아키텍처</td><td class="check">3개 사업 통합 개념 아키텍처 수립 여부. 클라우드/온프레미스 판단 근거</td></tr>
+          <tr><td class="item">프로토타이핑</td><td class="check">기술 검증(PoC) 계획 및 수행. 빅데이터·AI 기술 선택 근거</td></tr>
+          <tr><td class="item">최종 설계</td><td class="check">상세 아키텍처 정의. 확장성·가용성·성능 요건 반영</td></tr>
+          <tr><td class="phase" rowspan="3">구현</td><td class="item">도입·설치</td><td class="check">시스템 도입·설치 완료. 보안 환경 구축 병행 확인</td></tr>
+          <tr><td class="item">구성 요소 검증</td><td class="check">각 구성 요소(HW·SW·NW) 검증 수행 및 결과</td></tr>
+          <tr><td class="item">시스템 시험</td><td class="check">시험 계획 및 환경 구축. 부하·스트레스 테스트</td></tr>
+          <tr><td class="phase">종료</td><td class="item">운영 준비</td><td class="check">운영 환경 설치·배포 완전성. 시스템 전환·운영 이행 검증</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diff-box">
+      <div class="diff-lbl">시스템아키텍처 차별화 전략</div>
+      <ul>
+        <li><b>3사업 통합 아키텍처 맵:</b> 계열화+e음-수급플랫폼-빅데이터 간 데이터 흐름 및 시스템 연계도를 단일 다이어그램으로 관리</li>
+        <li><b>클라우드 전환 적정성 검증:</b> NIA 클라우드 감리 점검가이드 준용. 사업3 빅데이터 플랫폼의 클라우드 전환 타당성 검토</li>
+        <li><b>확장성·미래지향성:</b> 스마트축산본부 확대(2026.01 신설)에 따른 향후 시스템 확장 계획 반영 여부 검증</li>
+        <li><b>성능 기준 검증:</b> 실시간 데이터 처리(수급플랫폼)와 대용량 데이터 분석(빅데이터) 각각의 성능 기준 수립 및 검증</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h arch"><span class="num">04</span><h3>투입 인력 계획</h3></div>
+      <div class="plan-card arch">
+        <div class="pc-h"><span class="pc-name">시스템아키텍처 감리원</span><span class="pc-bdg">상근 100%</span></div>
+        <div class="pc-body">
+          <b>홍부장 (아키텍처 검증 총괄) + 외부 아키텍처 전문가 1인</b><br>
+          <b>홍부장:</b> 통합 아키텍처 검증 · 시스템 연계 · 운영 환경 점검<br>
+          <b>외부 아키텍처 전문가:</b> 빅데이터·클라우드 아키텍처 검증 · PoC 결과 검토 · 성능 테스트 평가<br>
+          <b>투입률:</b> 착수 20% / 중간 50% / 종료 30%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>DOMAIN 04 · 시스템아키텍처</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ====== DOMAIN 5: 보안 ====== -->
+<div class="sheet">
+  <div class="doc-hdr">
+    <div class="doc-cat">DOMAIN 05 · 5대 영역 중 다섯 번째 · 최우선</div>
+    <h2>5. 보안 부문 감리계획</h2>
+    <div class="doc-sub">RFP 요구: SW 보안약점 진단(국정원 인증 도구+진단원 자격) · 개인정보보호 · 웹 접근성 · 보안 환경 점검</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">RFP 항목</div><div class="dm-val">보안 8+항목+특별요구</div></div>
+      <div class="dm-item"><div class="dm-label">담당자</div><div class="dm-val">홍부장+보안 전문가</div></div>
+      <div class="dm-item"><div class="dm-label">핵심 가치</div><div class="dm-val">재발 방지 3중 체계</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner">
+    <div class="page-mark">DOMAIN 05 · 보안</div>
+
+    <div class="sec">
+      <div class="sec-h sec"><span class="num">01</span><h3>감리 범위 및 개요</h3></div>
+      <div style="background:var(--red-soft);border:1px solid rgba(220,38,38,.2);border-left:4px solid var(--red);padding:3mm 4.5mm;border-radius:0 5px 5px 0;margin:2mm 0">
+        <p style="font:400 9.5pt var(--sans);color:var(--ink-soft);line-height:1.7"><b>범위:</b> 3개 사업 전체 보안 요건 점검. <b>2024 감사 지점 재발 방지</b>를 최우선 목표로 설정.<br>
+        <b>핵심 근거:</b> 브릿지경제(2024.05.16) — 농식품부 종합감사서 보호구역 출입 사후결재·무결재, 복무기강 해이, 자의적 규정 운영 등 지적. "처분은 주의·개선에 그쳐 재발 가능성 상존."<br>
+        <b>RFP 특별 요구:</b> 국정원 인증 보안약점진단도구 사용 + 6년↑ SW 개발 경력+정보보안 전문성 보유 진단원 투입 + 인증서/자격증 제출.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h sec"><span class="num">02</span><h3>보안 3중 점검 체계 (본사 차별화 솔루션)</h3></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5mm;margin:2mm 0 3.5mm">
+        <div style="border:1px solid var(--border);border-radius:5px;padding:3mm;background:#fff;border-top:3px solid var(--red)">
+          <div style="font:700 8.5pt/1 var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--red);margin-bottom:2mm">Layer 1</div>
+          <div style="font:700 10pt var(--sans);color:var(--navy);margin-bottom:1.5mm">SW 보안약점 진단</div>
+          <div style="font:400 8.5pt var(--sans);color:var(--ink-soft);line-height:1.65">
+            <b>도구:</b> 국정원 인증 보안약점 진단도구 보유 · 인증서 제출 가능<br>
+            <b>진단원:</b> 정보보안 전문성+6년↑ SW 개발 경력 보유자 투입<br>
+            <b>범위:</b> 행정기관·공공기관 정보시스템 구축 운영 지침 별표 3 SW 보안약점 전수 진단<br>
+            <b>산출물:</b> 보안약점 진단보고서 + 취약점 조치 결과
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:5px;padding:3mm;background:#fff;border-top:3px solid var(--orange)">
+          <div style="font:700 8.5pt/1 var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--orange);margin-bottom:2mm">Layer 2</div>
+          <div style="font:700 10pt var(--sans);color:var(--navy);margin-bottom:1.5mm">개인정보보호 진단</div>
+          <div style="font:400 8.5pt var(--sans);color:var(--ink-soft);line-height:1.65">
+            <b>점검:</b> 개인정보 처리시스템 접속기록 관리 · 암호화 송신 · 접근권한 통제 · 비밀번호 정책<br>
+            <b>배경:</b> 2024 감사 지적 중 개인정보 보안 취약점 포함 · 개인정보위 지자체 제재 확대 기조<br>
+            <b>특화:</b> 축평원 보유 축산업주·농가 개인정보 보호 수준 S등급 유지 지원
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:5px;padding:3mm;background:#fff;border-top:3px solid var(--navy-light)">
+          <div style="font:700 8.5pt/1 var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--navy-light);margin-bottom:2mm">Layer 3</div>
+          <div style="font:700 10pt var(--sans);color:var(--navy);margin-bottom:1.5mm">물리적·관리적 보안 점검</div>
+          <div style="font:400 8.5pt var(--sans);color:var(--ink-soft);line-height:1.65">
+            <b>점검:</b> 보호구역 출입 통제 절차 · 복무 기강 · 보안 규정 운영의 적정성<br>
+            <b>배경:</b> 2024 감사-보호구역 사후결재/무결재·복무기강 해이·자의적 규정 운영 지적<br>
+            <b>차별화:</b> 감리 범위에 '물리적·관리적 보안' 포함 — 일반 IT 감리 대비 확장된 범위
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h sec"><span class="num">03</span><h3>단계별 감리 점검 포인트</h3></div>
+      <div class="phase-grid">
+        <div class="phase-card req">
+          <div class="p-label">Phase 1 · 요구정의</div>
+          <div class="p-title">보안 요건 분석</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 시스템 보안 요건 분석 적정성 · 보안 요구사항 식별 충분성 · 개인정보 영향평가 수행 여부<br>
+            <b>특화:</b> 2024 감사 지적 사항의 보안 요건 반영 여부 확인
+          </div>
+        </div>
+        <div class="phase-card design">
+          <div class="p-label">Phase 2 · 설계 (중간감리)</div>
+          <div class="p-title">보안 설계·구현</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 보안 환경 구축의 충분성 · 접근 권한·통제 기능 구현 · SW 보안약점 설계 반영 · 웹 접근성 설계<br>
+            <b>산출물:</b> 중간 보안약점 진단 결과 (조치 가능한 취약점 선제 발견)
+          </div>
+        </div>
+        <div class="phase-card end">
+          <div class="p-label">Phase 3 · 종료</div>
+          <div class="p-title">전체 보안 검증</div>
+          <div class="p-body">
+            <b>주요 점검:</b> 시스템 도입·설치 및 보안환경 구축 충분성 · 보안약점 전수 진단 · 취약점 조치 완료 확인 · 웹 접근성+전문가 진단 리포트 · 개인정보보호 조치 확인<br>
+            <b>필수 산출물:</b> 보안약점 진단보고서 + 진단도구 인증서 + 진단원 자격증 + 취약점 조치 결과
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h sec"><span class="num">04</span><h3>RFP 점검항목 매핑 · 체크리스트 (보안 집중)</h3></div>
+      <table class="rfp-table">
+        <thead><tr><td style="width:16mm">구분</td><td style="width:44mm">RFP 요구사항</td><td>체크리스트 세부 항목</td></tr></thead>
+        <tbody>
+          <tr><td class="phase" style="background:var(--red-soft);color:var(--red)" rowspan="4">필수<br>제출</td>
+              <td class="item">진단도구 인증서</td>
+              <td class="check">국정원 인증 보안약점 진단도구 인증서 제출. 대상 시스템 소스코드 진단 기능 구현 증명</td></tr>
+          <tr><td class="item">진단원 자격증</td>
+              <td class="check">6년↑ SW 개발 경력 + 정보보안 전문성 증명. 자격증 또는 경력증명서 제출</td></tr>
+          <tr><td class="item">보안약점 진단보고서</td>
+              <td class="check">별표 3 SW 보안약점 전수 진단. 진단 결과 및 심각도 분류</td></tr>
+          <tr><td class="item">취약점 조치 결과</td>
+              <td class="check">발견 취약점 제거 조치 완료. 조치 내용 및 결과 증빙</td></tr>
+          <tr><td class="phase" rowspan="3">보안 점검</td>
+              <td class="item">보안 요건 분석</td>
+              <td class="check">3개 사업 각각의 보안 요구사항 식별 및 분석 적정성</td></tr>
+          <tr><td class="item">접근 권한·통제</td>
+              <td class="check">사용자 인증·권한·감사 로그 구현 정확성</td></tr>
+          <tr><td class="item">보안 환경 구축</td>
+              <td class="check">HW·SW·NW 보안 환경 구축 충분성. 방화벽·IDS/IPS 등</td></tr>
+          <tr><td class="phase" rowspan="3">추가 점검</td>
+              <td class="item">웹 접근성</td>
+              <td class="check">자동화평가도구+전문가 진단 리포트. 종료단계 보고서 포함</td></tr>
+          <tr><td class="item">개인정보보호</td>
+              <td class="check">개인정보 암호화·마스킹·접속기록 관리. S등급 유지 지원</td></tr>
+          <tr><td class="item">물리적 보안</td>
+              <td class="check">보호구역 출입 통제·복무 규정 준수. 2024 감사 지적 재발 방지</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diff-box">
+      <div class="diff-lbl">보안 차별화 전략 — "2024 감사 지적, 감리로 재발 방지한다"</div>
+      <ul>
+        <li><b>보안 3중 점검 체계 유일 제안:</b> SW보안약점 + 개인정보보호 + 물리적/관리적 보안을 원패키지로 제공하는 1인 법인은 경쟁사 대비 유일</li>
+        <li><b>진단도구+진단원+보고서 원패키지:</b> 국정원 인증 도구 보유(인증서 제출 가능) + 자격 보유 진단원 투입 + 보고서 작성까지 One-Stop</li>
+        <li><b>2024 감사 지적 완전 대응:</b> 브릿지경제 확인 지적사항(보호구역 출입 통제·복무기강·규정 운영)을 감리 범위에 명시적 포함</li>
+        <li><b>웹 접근성 하이브리드 진단:</b> 자동화 도구(K-WAH 등) + 전문가 육안 진단 병행. RFP 요구 만족+차별화</li>
+        <li><b>보안 컨설팅 병행:</b> 단순 진단 → 취약점 개선 방향까지 제시하는 컨설팅형 접근. 박수진 원장 '디지털 기술' 경영방침과 부합</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h sec"><span class="num">05</span><h3>투입 인력 계획</h3></div>
+      <div class="plan-card sec">
+        <div class="pc-h"><span class="pc-name">보안 감리원</span><span class="pc-bdg">상근 100%</span></div>
+        <div class="pc-body">
+          <b>홍부장 (보안 감리 총괄) + 정보보안 전문가 1인 (진단원 자격 보유)</b><br>
+          <b>홍부장:</b> 보안 요건 검증 · 개인정보보호 점검 · 물리적/관리적 보안 점검 총괄<br>
+          <b>정보보안 전문가:</b> SW 보안약점 진단(국정원 인증 도구 활용) · 진단보고서 작성 · 취약점 조치 검증 · 진단원 자격증 제출<br>
+          <b>투입률:</b> 착수 20% / 중간 40% / 종료 40% (종료단계 집중)
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>DOMAIN 05 · 보안</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+</div><!-- /stack -->
+</body>
+</html>

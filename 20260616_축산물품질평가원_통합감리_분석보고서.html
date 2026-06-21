@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>축산물품질평가원 · 2026년 정보화 사업 통합감리 · RFP 분석 보고서</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0D2340;--navy-mid:#1A3A5C;--navy-light:#2B5083;
+  --gold:#C9922A;--gold-light:#F0C96A;--gold-soft:#FDF6E3;--gold-border:#EDD38A;
+  --red:#DC2626;--red-soft:#FEF2F2;
+  --orange:#D97706;--orange-soft:#FFFBEB;
+  --green:#059669;--green-soft:#ECFDF5;
+  --ink:#111827;--ink-soft:#374151;--ink-mute:#6B7280;--ink-faint:#9CA3AF;
+  --border:#DDE1E9;--border-light:#EAEDF2;--surface:#F7F8FA;
+  --sans:'Pretendard Variable','Pretendard',sans-serif;
+  --serif:'DM Serif Display',serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{font-family:var(--sans);background:#e8eaf0;color:var(--ink);-webkit-font-smoothing:antialiased}
+.tb{position:fixed;top:0;left:0;right:0;height:52px;z-index:300;background:rgba(13,35,64,.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:8px;padding:0 16px}
+.tb-brand{font:700 13px var(--sans);color:#fff}
+.tb-sub{font:600 7.5px var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold-light);margin-left:8px}
+.tb-spacer{flex:1}
+.tb-nav{display:flex;gap:3px}
+.tb-nav a{height:28px;padding:0 8px;border-radius:4px;font:600 10px var(--sans);color:rgba(255,255,255,.7);text-decoration:none;display:flex;align-items:center;border:1px solid transparent;transition:all .15s}
+.tb-nav a:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)}
+.tb-print{height:28px;padding:0 12px;border-radius:4px;font:700 10px var(--sans);background:var(--gold);border:none;color:var(--navy);cursor:pointer}
+.stack{padding:68px 0 60px;display:flex;flex-direction:column;align-items:center;gap:24px}
+.cv{width:210mm;min-height:297mm;background:#fff;border-radius:6px;box-shadow:0 4px 24px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden;position:relative}
+.cv-hdr{background:var(--navy);padding:30mm 15mm 20mm;border-bottom:5px solid var(--gold);position:relative;text-align:center}
+.cv-hdr::before{content:"";position:absolute;top:0;left:0;right:0;height:4mm;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold))}
+.cv-org{font-family:var(--mono);font-size:11pt;letter-spacing:3.5pt;text-transform:uppercase;color:var(--gold-light);margin-bottom:8mm}
+.cv-title{font-family:var(--serif);font-weight:400;font-size:38pt;color:#fff;line-height:1.3;margin-bottom:8mm}
+.cv-title em{color:var(--gold-light);font-style:normal}
+.cv-tag{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font:700 9pt/1 var(--mono);letter-spacing:2pt;text-transform:uppercase;padding:6pt 12pt;border-radius:4pt;margin-bottom:8mm}
+.cv-doctype{font-family:var(--sans);font-weight:600;font-size:16pt;color:rgba(255,255,255,.8)}
+.cv-body{flex:1;padding:25mm 20mm 30mm;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center}
+.cv-sub{font-family:var(--sans);font-weight:400;font-size:12.5pt;color:var(--ink-soft);line-height:1.8;max-width:140mm;margin-bottom:30mm}
+.cv-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8mm;border-top:1px solid var(--border);padding-top:12mm;text-align:center;width:100%;max-width:150mm}
+.cv-meta .m-l{font:700 8.5pt/1 var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--gold);margin-bottom:4mm}
+.cv-meta .m-v{font-family:var(--sans);font-size:12.5pt;font-weight:600;color:var(--navy)}
+.cv-foot{background:var(--surface);color:var(--ink-soft);padding:8mm 22mm;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);flex-shrink:0}
+.cv-foot-l{font-family:var(--sans);font-weight:700;font-size:11pt;color:var(--navy)}
+.cv-foot-l .sub{font-size:8pt;font-weight:500;color:var(--navy-light);letter-spacing:1.5pt;text-transform:uppercase;margin-left:8px;font-family:var(--mono)}
+.cv-foot-r{font:500 8pt/1 var(--mono);letter-spacing:1.5pt;color:var(--ink-mute);text-transform:uppercase}
+.sheet{width:210mm;min-height:297mm;background:#fff;border-radius:6px;box-shadow:0 4px 24px rgba(0,0,0,.12);display:flex;flex-direction:column;overflow:hidden}
+.sheet-inner{flex:1;padding:12mm 14mm 8mm}
+.page-mark{position:absolute;top:5mm;right:8mm;font:500 7pt var(--mono);letter-spacing:1.5pt;color:var(--ink-faint);text-transform:uppercase}
+.doc-hdr{background:var(--navy);padding:5mm 14mm 4mm;border-bottom:3px solid var(--gold);position:relative;flex-shrink:0}
+.doc-hdr::before{content:"";position:absolute;top:0;left:0;right:0;height:2.5mm;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold))}
+.doc-hdr .doc-cat{font:700 6.5pt var(--mono);letter-spacing:2.5pt;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.5mm}
+.doc-hdr h2{font:700 15pt var(--sans);color:#fff;letter-spacing:-.3px;line-height:1.25;margin-bottom:1.5mm}
+.doc-hdr .doc-sub{font:400 8pt var(--sans);color:rgba(255,255,255,.5);line-height:1.6}
+.doc-hdr .doc-meta{display:flex;gap:4mm;margin-top:3mm;flex-wrap:wrap}
+.dm-item{text-align:center;padding:2mm 4mm;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:4px}
+.dm-label{font:700 6pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--gold);margin-bottom:1mm}
+.dm-val{font:600 9.5pt var(--sans);color:#fff}
+.doc-ftr{background:var(--navy);padding:3mm 14mm;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);flex-shrink:0}
+.doc-ftr .ftr-l{font:700 7.5pt var(--sans);color:#fff}
+.doc-ftr .ftr-l span{font:500 6pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--gold-light);margin-left:6px}
+.doc-ftr .ftr-r{font:500 6pt var(--mono);letter-spacing:1pt;color:rgba(255,255,255,.35);text-transform:uppercase}
+.sign-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm;margin-top:6mm}
+.sign-box{text-align:center;padding-top:3mm;border-top:2px solid var(--navy)}
+.sign-box.gold{border-top-color:var(--gold)}
+.sign-lbl{font:700 7.5pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--ink-mute);margin-bottom:2mm}
+.sign-name{font:600 10.5pt var(--sans);color:var(--navy)}
+.sec{margin:7mm 0 4mm}
+.sec-h{display:flex;align-items:center;gap:3.5mm;padding-bottom:2.5mm;margin-bottom:3.5mm;border-bottom:2px solid var(--border);position:relative}
+.sec-h::after{content:"";position:absolute;bottom:-2px;left:0;width:16mm;height:2px;background:linear-gradient(90deg,var(--navy-light),transparent)}
+.sec-h .num{font:700 7.5pt var(--mono);letter-spacing:1.5pt;color:#fff;background:var(--navy-light);padding:2pt 7pt;border-radius:3pt;flex-shrink:0}
+.sec-h h3{font:700 12.5pt var(--sans);color:var(--navy);letter-spacing:-.2px}
+.sec-sub{margin:3.5mm 0 2mm}
+.sec-sub h4{font:700 10pt var(--sans);color:var(--navy-mid);display:flex;align-items:center;gap:2.5mm;margin-bottom:2mm}
+.sec-sub h4::before{content:"";display:inline-block;width:2pt;height:11pt;background:var(--gold);border-radius:2pt;flex-shrink:0}
+.bdg{display:inline-block;font:700 6.5pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;padding:2pt 6pt;border-radius:3.5pt}
+.bdg.high{background:var(--red-soft);color:var(--red);border:1px solid rgba(220,38,38,.25)}
+.bdg.mid{background:var(--orange-soft);color:var(--orange);border:1px solid rgba(217,119,6,.25)}
+.bdg.low{background:var(--green-soft);color:var(--green);border:1px solid rgba(5,150,105,.25)}
+.bdg.info{background:#EBF0F8;color:var(--navy-light);border:1px solid #B8CCDF}
+.bdg.gold{background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-border)}
+.bdg.go{background:var(--green-soft);color:var(--green);border:1px solid rgba(5,150,105,.4);font-size:9pt;padding:3pt 10pt}
+.bdg.nogo{background:var(--red-soft);color:var(--red);border:1px solid rgba(220,38,38,.4);font-size:9pt;padding:3pt 10pt}
+.kv-table{width:100%;border-collapse:collapse;margin:2.5mm 0 4mm;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.kv-table tr{border-bottom:1px solid var(--border-light)}
+.kv-table tr:last-child{border-bottom:none}
+.kv-table tr:nth-child(even) td.v{background:var(--surface)}
+.kv-table td{padding:2.5mm 4.5mm;font-size:10pt;line-height:1.7;vertical-align:top}
+.kv-table td.k{font:700 9.5pt var(--sans);color:var(--navy);width:46mm;background:var(--surface);border-right:1px solid var(--border)}
+.kv-table td.v{color:var(--ink)}
+.risk-table{width:100%;border-collapse:collapse;margin:2.5mm 0 4mm;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.risk-table thead tr{background:var(--navy)}
+.risk-table thead td{padding:2mm 3.5mm;font:700 8.5pt var(--sans);color:var(--gold-light)}
+.risk-table tbody tr{border-bottom:1px solid var(--border-light)}
+.risk-table tbody tr:last-child{border-bottom:none}
+.risk-table tbody tr:nth-child(even){background:var(--surface)}
+.risk-table td{padding:2.5mm 3.5mm;font-size:9.5pt;line-height:1.65;vertical-align:top}
+.risk-table td.level{width:15mm;text-align:center}
+.risk-table td.item{font:700 9.5pt var(--sans);color:var(--navy);width:34mm}
+.risk-table td.desc{color:var(--ink-soft)}
+.score-table{width:100%;border-collapse:collapse;margin:2.5mm 0;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.score-table thead tr{background:var(--navy)}
+.score-table thead td{padding:2mm 3.5mm;font:700 8.5pt var(--sans);color:var(--gold-light)}
+.score-table tbody tr{border-bottom:1px solid var(--border-light)}
+.score-table tbody tr:last-child{border-bottom:none}
+.score-table tbody tr:nth-child(even){background:var(--surface)}
+.score-table td{padding:2.5mm 3.5mm;font-size:9.5pt;line-height:1.65;vertical-align:middle}
+.score-table td.score{text-align:center;font:700 10.5pt var(--mono);color:var(--navy-light);width:15mm}
+.cost-table{width:100%;border-collapse:collapse;margin:2.5mm 0;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.cost-table thead tr{background:var(--navy)}
+.cost-table thead td{padding:2mm 3.5mm;font:700 8.5pt var(--sans);color:var(--gold-light)}
+.cost-table tbody tr{border-bottom:1px solid var(--border-light)}
+.cost-table tbody tr:last-child{border-bottom:none}
+.cost-table tbody tr:nth-child(even){background:var(--surface)}
+.cost-table tfoot tr{background:var(--navy-mid)}
+.cost-table tfoot td{padding:2.5mm 3.5mm;font:700 9.5pt var(--sans);color:var(--gold-light)}
+.cost-table td{padding:2.5mm 3.5mm;font-size:9.5pt;line-height:1.65;vertical-align:middle}
+.cost-table td.num{text-align:right;font-family:var(--mono);font-size:9pt}
+.cost-table td.k{font:700 9.5pt var(--sans);color:var(--navy);background:var(--surface);border-right:1px solid var(--border);width:30mm}
+.ms-table{width:100%;border-collapse:collapse;margin:2.5mm 0;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.ms-table thead tr{background:var(--navy)}
+.ms-table thead td{padding:2mm 3.5mm;font:700 8.5pt var(--sans);color:var(--gold-light)}
+.ms-table tbody tr{border-bottom:1px solid var(--border-light)}
+.ms-table tbody tr:last-child{border-bottom:none}
+.ms-table td{padding:2.5mm 3.5mm;font-size:9.5pt;line-height:1.65;vertical-align:top}
+.ms-table td.step{font:700 9.5pt var(--sans);color:var(--navy);width:34mm;border-right:1px solid var(--border)}
+.ms-table td.date{font:600 9pt var(--mono);color:var(--navy-light);width:24mm;border-right:1px solid var(--border)}
+.ms-table td.owner{font:600 9.5pt var(--sans);color:var(--ink-soft);width:22mm;border-right:1px solid var(--border)}
+.ms-table td.action{font-size:9pt;color:var(--ink-soft)}
+.cl-table{width:100%;border-collapse:collapse;margin:2.5mm 0;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.cl-table thead tr{background:var(--navy)}
+.cl-table thead td{padding:2mm 3.5mm;font:700 8.5pt var(--sans);color:var(--gold-light)}
+.cl-table tbody tr{border-bottom:1px solid var(--border-light)}
+.cl-table tbody tr:last-child{border-bottom:none}
+.cl-table tbody tr:nth-child(even){background:var(--surface)}
+.cl-table td{padding:2.5mm 3.5mm;font-size:9.5pt;line-height:1.65;vertical-align:top}
+.cl-table td.domain{font:700 9.5pt var(--sans);color:var(--navy);width:26mm;background:var(--surface);border-right:1px solid var(--border)}
+.cl-table td.chk{text-align:center;width:12mm;font-size:11pt;border-right:1px solid var(--border)}
+.callout{background:#EBF0F8;border:1px solid #B8CCDF;border-left:4px solid var(--navy-light);padding:3.5mm 5mm;border-radius:0 5px 5px 0;margin:2.5mm 0}
+.callout.gold{background:var(--gold-soft);border-color:var(--gold-border);border-left-color:var(--gold)}
+.callout.red{background:var(--red-soft);border-color:rgba(220,38,38,.2);border-left-color:var(--red)}
+.callout.green{background:var(--green-soft);border-color:rgba(5,150,105,.2);border-left-color:var(--green)}
+.callout .cl-label{font:700 7pt var(--mono);letter-spacing:2pt;text-transform:uppercase;color:var(--navy-light);margin-bottom:1.5mm}
+.callout.gold .cl-label{color:var(--gold)}
+.callout.red .cl-label{color:var(--red)}
+.callout.green .cl-label{color:var(--green)}
+.callout p{font:400 9.5pt var(--sans);color:var(--ink);line-height:1.8}
+.csf-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:3mm 0}
+.csf-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--navy-light);border-radius:5px;padding:3.5mm 4.5mm}
+.csf-no{font:700 7pt var(--mono);letter-spacing:2pt;color:var(--navy-light);margin-bottom:1.5mm}
+.csf-title{font:700 10pt var(--sans);color:var(--navy);margin-bottom:1.5mm;line-height:1.3}
+.csf-body{font:400 8.5pt var(--sans);color:var(--ink-mute);line-height:1.65}
+.gng-box{display:flex;gap:5mm;align-items:center;padding:4mm 6mm;border-radius:6px;margin:3mm 0}
+.gng-box.go{background:var(--green-soft);border:2px solid rgba(5,150,105,.4)}
+.gng-box.nogo{background:var(--red-soft);border:2px solid rgba(220,38,38,.4)}
+.gng-val{font:400 24pt var(--serif);line-height:1;flex-shrink:0}
+.gng-box.go .gng-val{color:var(--green)}
+.gng-box.nogo .gng-val{color:var(--red)}
+.gng-text{font:400 10pt var(--sans);color:var(--ink-soft);line-height:1.8}
+.info-block{background:linear-gradient(135deg,var(--gold-soft) 0%,#fff 60%);border:1px solid var(--gold-border);border-radius:6px;padding:4mm 6mm;margin:0 0 6mm}
+.ib-label{font:700 7pt var(--mono);letter-spacing:2.2pt;text-transform:uppercase;color:var(--gold);margin-bottom:3.5mm;display:flex;align-items:center;gap:2mm}
+.ib-label::before{content:"◆";font-size:7pt;color:var(--gold)}
+.body-text{font:400 10pt var(--sans);color:var(--ink-soft);line-height:1.9;padding:3.5mm 4.5mm;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--navy-light);border-radius:0 5px 5px 0;margin:2mm 0 3.5mm}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:4mm 0}
+/* T05 협상 전략 전용 */
+.neg-table{width:100%;border-collapse:collapse;margin:2.5mm 0;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.neg-table thead tr{background:var(--navy)}
+.neg-table thead td{padding:2mm 3.5mm;font:700 8pt var(--sans);color:var(--gold-light);vertical-align:middle}
+.neg-table tbody tr{border-bottom:1px solid var(--border-light)}
+.neg-table tbody tr:last-child{border-bottom:none}
+.neg-table tbody tr:nth-child(even){background:var(--surface)}
+.neg-table td{padding:2.5mm 3mm;font-size:9pt;line-height:1.6;vertical-align:top}
+.neg-table td.id{font:700 9pt var(--mono);color:var(--navy);width:16mm;text-align:center;vertical-align:middle}
+.neg-table td.sev{text-align:center;width:14mm;vertical-align:middle}
+.neg-table td.ds-item{font:700 9.5pt var(--sans);color:var(--navy);width:40mm;vertical-align:middle}
+.neg-table td.neg-goal{width:38mm;vertical-align:middle}
+.neg-table td.neg-line{width:36mm;vertical-align:middle}
+.neg-table td.neg-ammo{vertical-align:middle}
+.pri-bdg{display:inline-block;font:700 6.5pt var(--mono);padding:2pt 6pt;border-radius:3pt;letter-spacing:.5pt}
+.pri-bdg.must{background:#FEF2F2;color:#B91C1C;border:1px solid rgba(185,28,28,.3)}
+.pri-bdg.nice{background:#FFFBEB;color:#B45309;border:1px solid rgba(180,83,9,.3)}
+.pri-bdg.give{background:#ECFDF5;color:#047857;border:1px solid rgba(4,120,87,.3)}
+.stn-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;margin:3mm 0}
+.stn-card{background:#fff;border:1px solid var(--border);border-radius:5px;padding:3.5mm;border-top:3px solid var(--ink-faint)}
+.stn-card.opt{border-top-color:var(--green)}
+.stn-card.typ{border-top-color:var(--gold)}
+.stn-card.pes{border-top-color:var(--red)}
+.stn-card .stn-label{font:700 7pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--ink-mute);margin-bottom:1mm}
+.stn-card.opt .stn-label{color:var(--green)}
+.stn-card.typ .stn-label{color:var(--gold)}
+.stn-card.pes .stn-label{color:var(--red)}
+.stn-card .stn-title{font:700 10pt var(--sans);color:var(--navy);margin-bottom:1.5mm}
+.stn-card .stn-body{font:400 8.5pt var(--sans);color:var(--ink-soft);line-height:1.65}
+.stn-card .stn-num{font:700 16pt var(--mono);color:var(--ink-faint);text-align:right;margin-top:2mm}
+.stn-card.opt .stn-num{color:rgba(5,150,105,.3)}
+.stn-card.typ .stn-num{color:rgba(201,146,42,.3)}
+.stn-card.pes .stn-num{color:rgba(220,38,38,.3)}
+.tp-box{background:var(--surface);border:1px dashed var(--border);border-radius:5px;padding:3mm 4mm;margin:2mm 0}
+.tp-box .tp-label{font:700 6.5pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;color:var(--gold);margin-bottom:1.5mm}
+.tp-box p{font:400 9pt var(--sans);color:var(--ink-soft);line-height:1.7}
+.pact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:3mm 0}
+.pact-card{border-radius:5px;padding:3.5mm;border:1px solid var(--border)}
+.pact-card.red{background:var(--red-soft);border-color:rgba(220,38,38,.2)}
+.pact-card.green{background:var(--green-soft);border-color:rgba(5,150,105,.2)}
+.pact-card .pact-label{font:700 7pt var(--mono);letter-spacing:1.5pt;text-transform:uppercase;margin-bottom:1.5mm}
+.pact-card.red .pact-label{color:var(--red)}
+.pact-card.green .pact-label{color:var(--green)}
+.pact-card .pact-title{font:700 10pt var(--sans);color:var(--navy);margin-bottom:1.5mm}
+.pact-card .pact-body{font:400 8.5pt var(--sans);color:var(--ink-soft);line-height:1.65}
+.pact-card .pact-body b{color:var(--navy)}
+@media print{
+  @page{size:A4 portrait;margin:0}
+  html,body{background:#fff}
+  .tb{display:none}
+  .stack{padding:0;gap:0}
+  .sheet,.index-page{width:auto;min-height:297mm;box-shadow:none;border-radius:0;border:none;page-break-after:always}
+  .sheet:last-child{page-break-after:auto}
+  .cv{margin:0;padding:0;min-height:297mm;page-break-after:always}
+}
+</style>
+</head>
+<body>
+<div class="tb">
+  <span class="tb-brand">전문 1인 감리회사<span class="tb-sub">RFP 분석 보고서</span></span>
+  <div class="tb-spacer"></div>
+  <nav class="tb-nav">
+    <a href="#T01">T01 RFP분석</a>
+    <a href="#T02">T02 딥서치</a>
+    <a href="#T03">T03 원가분석</a>
+    <a href="#T04">T04 Go/NoGo</a>
+    <a href="#T05">T05 협상전략</a>
+  </nav>
+  <button class="tb-print" onclick="window.print()">⬇ PDF</button>
+</div>
+<div class="stack">
+
+<!-- COVER -->
+<div class="cv">
+  <div class="cv-hdr">
+    <div class="cv-org">전문 1인 감리회사</div>
+    <div class="cv-tag">RFP Analysis Report · 2026</div>
+    <h1 class="cv-title">
+      축산물품질평가원<br>
+      <em>2026년 정보화 사업 통합감리</em><br>제안요청서 분석 보고서
+    </h1>
+    <div class="cv-doctype">RFP 분석 · 발주기관 딥서치 · 원가분석 · 수주 전략 통합</div>
+  </div>
+  <div class="cv-body">
+    <div class="cv-sub">본 보고서는 README.md v4.5 업무지시서와 표준양식집 v1.0에 따라 RFP 분석, 발주기관 웹 딥서치, 원가분석, Go/No-Go 판단을 통합한 분석 보고서입니다.<br>모든 주장은 RFP 원문 및 웹검색 근거 기반 (Evidence-First)</div>
+    <div class="cv-meta">
+      <div class="m"><div class="m-l">문서 버전</div><div class="m-v">v1.0</div></div>
+      <div class="m"><div class="m-l">작성</div><div class="m-v">사업분석가 (AI)</div></div>
+      <div class="m"><div class="m-l">작성일</div><div class="m-v">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="cv-foot">
+    <div class="cv-foot-l">전문 1인 감리회사 <span class="sub">Internal Document</span></div>
+    <div class="cv-foot-r">RFP Analysis · Audit Proposal Preparation</div>
+  </div>
+</div>
+
+<!-- ===== T01: RFP 분석 요약서 ===== -->
+<div class="sheet" id="T01">
+  <div class="doc-hdr">
+    <div class="doc-cat">T01 · RFP Analysis · 사업분석가 작성 → 홍부장 승인</div>
+    <h2>RFP 분석 요약서</h2>
+    <div class="doc-sub">준거: NIA-PAG A22 · RDD(Requirement-Driven Drafting) Workflow · Search-First 원칙</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">발주기관</div><div class="dm-val">축산물품질평가원</div></div>
+      <div class="dm-item"><div class="dm-label">사업명</div><div class="dm-val">2026년도 정보화 사업 통합감리</div></div>
+      <div class="dm-item"><div class="dm-label">공고번호</div><div class="dm-val">나라장터 확인 필수 (조달청 위임)</div></div>
+      <div class="dm-item"><div class="dm-label">사업기간</div><div class="dm-val">2026.07~12 (6개월)</div></div>
+      <div class="dm-item"><div class="dm-label">작성일</div><div class="dm-val">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner" style="position:relative">
+    <div class="page-mark">T01 · RFP 분석 요약서</div>
+
+    <!-- 사업 요약 -->
+    <div class="info-block">
+      <div class="ib-label">사업 요약 · Project Summary</div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">공식 사업명</td><td class="v">2026년도 정보화 사업 통합감리</td></tr>
+          <tr><td class="k">감리 예산</td><td class="v">170,000천원 (부가세 포함) — 약 1.7억</td></tr>
+          <tr><td class="k">감리 유형</td><td class="v">통합감리 (3개 대상사업 통합 발주) — NIA-PAG 유형: 구축+고도화 혼합</td></tr>
+          <tr><td class="k">감리 단계</td><td class="v">요구정의단계 + 설계단계 + 종료단계 (3단계, 2회 감리수행결과보고서)</td></tr>
+          <tr><td class="k">투입 공수</td><td class="v">제안사 자율 제안 (RFP 최소 기준 없음. 영역별 1인↑, 상근 50%↑)</td></tr>
+          <tr><td class="k">적용 법령·기준</td><td class="v">전자정부법 / 행안부고시 제2024-53호(정보시스템감리기준) / NIA-PAG / 구축·운영지침 / DB표준화지침</td></tr>
+          <tr><td class="k">입찰 방식</td><td class="v">제한경쟁입찰 · 협상에 의한 계약 · 조달청 기술평가 위임</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 불균형 분석 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">01</span><h3>구축비 대비 감리비 불균형 분석</h3></div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">대상사업 구축 예산(추정)</td><td class="v">약 30~56억원 (감리비 1.7억 / 감리비율 3~5.7%로 역산)</td></tr>
+          <tr><td class="k">감리예산 / 감리비 비율</td><td class="v">170백만원 → 추정 감리비율 3~5.7% (통상 3~8% 대비 중하회)</td></tr>
+          <tr><td class="k">감리대상 사업 규모</td><td class="v">① 계열화사업자관리시스템구축+e음개선 ② 수급지원플랫폼4단계 ③ 스마트축산빅데이터고도화3차 — 3개사업 통합</td></tr>
+          <tr><td class="k">불균형 시사점</td><td class="v">① 예산 대비 감리비율이 낮은 편 — 발주처의 원가 절감 의도 ② 3개 사업 통합감리로 효율성 추구 ③ 공동수급 허용으로 중소형 법인 참여 유도</td></tr>
+          <tr><td class="k">제안서 활용 전략</td><td class="v">효율적 통합감리 수행체계 강조. 1인 법인의 신속한 의사결정과 낮은 관리비용으로 경쟁력 확보.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 요구사항 매핑 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">02</span><h3>요구사항 1:1 매핑표 (RDD Workflow)</h3></div>
+      <div class="callout gold"><div class="cl-label">RDD 필수 원칙</div><p>RFP의 모든 요구사항 ID에 제안서 대응 섹션과 위험도를 매핑한다. 고위험(Red) 항목은 제안서 전면 배치.</p></div>
+      <table class="risk-table">
+        <thead><tr><td style="width:18mm">요구사항 ID</td><td style="width:30mm">요구사항명</td><td style="width:14mm">위험도</td><td>제안서 대응 섹션 · 핵심 메시지</td></tr></thead>
+        <tbody>
+          <tr><td class="item">RFP-01</td><td class="desc">2단계(설계·종료) 감리 수행</td><td class="level"><span class="bdg low">Low</span></td><td class="desc">3.2 감리방법 — 단계별 점검절차 및 산출물 중심 기술</td></tr>
+          <tr><td class="item">RFP-02</td><td class="desc">요구정의단계 감리 포함 (최소 5일↑)</td><td class="level"><span class="bdg mid">Mid</span></td><td class="desc">3.1 감리대상 선정 — 요구정의단계 위험요소 사전 식별</td></tr>
+          <tr><td class="item">RFP-03</td><td class="desc">영역별 감리원 1인↑ 배치(5개 영역)</td><td class="level"><span class="bdg low">Low</span></td><td class="desc">3.3 감리인 구성 — 분야별 전문인력 편성표</td></tr>
+          <tr><td class="item">RFP-04</td><td class="desc">상근감리원 50%↑, 보조인력 불인정</td><td class="level"><span class="bdg low">Low</span></td><td class="desc">3.3 감리인 구성 — 1인 법인 상근 100% 차별화 강점</td></tr>
+          <tr><td class="item">RFP-05</td><td class="desc">소프트웨어 보안약점 진단 (국가정보원 인증 도구)</td><td class="level"><span class="bdg high">High</span></td><td class="desc">5. 기타사항 — 진단도구 보유·활용 계획 필수 명시</td></tr>
+          <tr><td class="item">RFP-06</td><td class="desc">기능점수(FP) 검증 및 비교표 작성</td><td class="level"><span class="bdg mid">Mid</span></td><td class="desc">5. 기타사항 — FP 검증 전문성 보유 입증</td></tr>
+          <tr><td class="item">RFP-07</td><td class="desc">웹 접근성·표준 준수 자동화 진단</td><td class="level"><span class="bdg mid">Mid</span></td><td class="desc">5. 기타사항 — 자동화 도구 리스트 포함</td></tr>
+          <tr><td class="item">RFP-08</td><td class="desc">사업관리 종합 의견 제시(진척·위험·변경·품질)</td><td class="level"><span class="bdg low">Low</span></td><td class="desc">4.1 사업수행 조직 + 4.2 사업관리 계획</td></tr>
+          <tr><td class="item">RFP-09</td><td class="desc">하도급 점검 결과 별도 제출</td><td class="level"><span class="bdg low">Low</span></td><td class="desc">4.2 사업관리 계획 — 하도급 적정성 점검 방안</td></tr>
+          <tr><td class="item">RFP-10</td><td class="desc">감리원 변경 2일 이내 제출 제한</td><td class="level"><span class="bdg high">High</span></td><td class="desc">3.3 감리인 구성 — 변경 리스크 최소화 대안 제시</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 독소조항 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">03</span><h3>계약 독소조항 분석</h3></div>
+      <table class="risk-table">
+        <thead><tr><td style="width:14mm">위험도</td><td style="width:22mm">조항 ID</td><td style="width:48mm">조항 핵심 내용</td><td>위험 사유 · 협상 대응 방향</td></tr></thead>
+        <tbody>
+          <tr><td class="level"><span class="bdg high">High</span></td><td class="item">DS-01</td><td class="desc">보안위반 → 부정당업자 등록(A급) / 계약금액 5%·3%·1% 위약금(B·C·D급 차등)</td><td class="desc">최대 위약금 1.7억×5%=850만원. 1인 법인에 치명적. 전담 보안인력 지정 및 보안서약서 철저 관리</td></tr>
+          <tr><td class="level"><span class="bdg high">High</span></td><td class="item">DS-02</td><td class="desc">감리원 변경 시 2일 이내 제출 (경조사 등 불가피한 경우 변경사유 발생일부터 2일)</td><td class="desc">실질적으로 불가능한 일정. 협상 시 5~7일로 연장 요구. 긴급 변경 프로토콜 사전 정의</td></tr>
+          <tr><td class="level"><span class="bdg high">High</span></td><td class="item">DS-03</td><td class="desc">현장감리 기간 모든 감리원 100% 상주 (참여율 100% 미만 예외 조항 있으나 모호)</td><td class="desc">1인 법인 특성상 동시 100% 상주 부담. 원격감리 20% 병행 협상. 사전문서검토 공수 인정 요청</td></tr>
+          <tr><td class="level"><span class="bdg mid">Mid</span></td><td class="item">DS-04</td><td class="desc">제안서 내용 = 계약 효력 (계약서 우선 단서 있음)</td><td class="desc">제안서 과잉 약속 금지. '발주기관 협의 후 조정 가능' 단서 모든 섹션에 포함</td></tr>
+          <tr><td class="level"><span class="bdg mid">Mid</span></td><td class="item">DS-05</td><td class="desc">사업자 선정 후 공동수급 재구성·변경 불가</td><td class="desc">공동수급 제안 시 구성원 확정 후 변경 불가. 초기 구성 신중히 결정</td></tr>
+          <tr><td class="level"><span class="bdg mid">Mid</span></td><td class="item">DS-06</td><td class="desc">참여감리원 타 사업 일정 중복 금지 (현장감리 수행일정 기준)</td><td class="desc">1인 법인 상근자 한정 리스크. 일정 중복 시기 사전 식별 및 조정 계획 제시</td></tr>
+          <tr><td class="level"><span class="bdg low">Low</span></td><td class="item">DS-07</td><td class="desc">제안서 보상 없음 (과학기술정보통신부 고시 제2020-95호 해당사항 없음)</td><td class="desc">제안 비용 자체 부담. 선정 시 수익성 충분히 확보 필요</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 배점 분석 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">04</span><h3>기술평가 배점 분석 · 고득점 전략</h3></div>
+      <div class="callout"><div class="cl-label">평가 구조</div><p>기술평가 90% + 가격평가 10%. 100점 만점 85점 미만 협상대상 제외. 차등점수제 적용(2점 순위 간 점수차)</p></div>
+      <table class="score-table">
+        <thead><tr><td style="width:22mm">평가항목</td><td style="width:28mm">세부평가요소</td><td style="width:12mm">배점</td><td>고득점 전략</td></tr></thead>
+        <tbody>
+          <tr><td class="item">점검내용 (20점)</td><td class="desc">위험요소 및 주안점</td><td class="score">10</td><td class="desc">축평원 2024년 종합감사 보안지적, 스마트축산본부 신설(2026.01), 빅데이터플랫폼 고도화 등 현안 반영</td></tr>
+          <tr><td class="item"></td><td class="desc">단계별 점검 방안</td><td class="score">10</td><td class="desc">요구정의→설계→종료 각 단계별 차별화된 점검 포인트 구체 기술</td></tr>
+          <tr><td class="item">점검방법 (10점)</td><td class="desc">필수점검사항 점검방법</td><td class="score">5</td><td class="desc">기술적용계획표, 과업이행여부 점검 방법론 구체화</td></tr>
+          <tr><td class="item"></td><td class="desc">점검 방법의 구체성</td><td class="score">5</td><td class="desc">AI 자동화 도구 + 전문가 진단 하이브리드 방법론 제시</td></tr>
+          <tr><td class="item">감리일정·절차 (10점)</td><td class="desc">감리일정의 적정성</td><td class="score">5</td><td class="desc">3개 사업 일정 통합 관리 WBS 제시</td></tr>
+          <tr><td class="item"></td><td class="desc">시정조치확인 적정성</td><td class="score">5</td><td class="desc">신속 대응 가능한 1인 법인 체계 강조</td></tr>
+          <tr><td class="item">감리인력구성 (15점)</td><td class="desc">분야별 인력 배치</td><td class="score">10</td><td class="desc">5개 영역 1인↑. 외부 전문가 풀(Pool) 활용. 초과 제안 금지</td></tr>
+          <tr><td class="item"></td><td class="desc">상근감리원 비율</td><td class="score">5</td><td class="desc">1인 법인 상근 100% 강점 극대화</td></tr>
+          <tr><td class="item">총괄감리원 (10점)</td><td class="desc">총괄감리원 전문성</td><td class="score">10</td><td class="desc">수석감리원 자격 + 유사사업(공공기관 정보화 감리) 경력 집중 부각</td></tr>
+          <tr><td class="item">분야별인력 (15점)</td><td class="desc">분야별 전문성</td><td class="score">10</td><td class="desc">축산·농림 분야 감리 경험 보유 인력 우선 배치</td></tr>
+          <tr><td class="item"></td><td class="desc">교육 이수 실적</td><td class="score">5</td><td class="desc">감리원 계속교육 이수 현황 증빙</td></tr>
+          <tr><td class="item">기타지원 (20점)</td><td class="desc">품질향상 관리</td><td class="score">10</td><td class="desc">1인 법인 맞춤형 품질관리 체계 (외부 검수 등)</td></tr>
+          <tr><td class="item"></td><td class="desc">자동화도구 활용</td><td class="score">5</td><td class="desc">보안약점진단도구+웹접근성진단도구+FP측정도구 명시</td></tr>
+          <tr><td class="item"></td><td class="desc">추가 지원사항</td><td class="score">5</td><td class="desc">발주처 요구 반영 + 감리 효율화 추가 제안</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 유리 해석 포인트 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">05</span><h3>RFP 유리 해석 포인트</h3></div>
+      <table class="risk-table">
+        <thead><tr><td style="width:46mm">모호 조항</td><td>우리 법인 유리 해석 방향</td></tr></thead>
+        <tbody>
+          <tr><td class="item">"투입 공수는 제안사에서 적정 인원 제안"</td><td class="desc">공수 최적화 가능. 최소 인원으로 경쟁력 있는 가격 제시. 단, RFP 영역별 1인↑ 충족 필수</td></tr>
+          <tr><td class="item">"참여율 100%가 아닌 감리원의 경우 예외"</td><td class="desc">비상근 감리원 활용 가능성 열려 있음. 전문분야(축산 빅데이터, AI) 외부 전문가 기용 근거</td></tr>
+          <tr><td class="item">"감리계획서에 제출 일시 별도 명시 가능"</td><td class="desc">보고서 제출 일정을 현실적으로 협상 가능. 3개 사업 병행 감리 일정 조정 여유 확보</td></tr>
+          <tr><td class="item">"추가감리 제안 가능 (가용 예산 범위 내)"</td><td class="desc">차별화 포인트로 활용. 통합감리 효율성을 강조하며 무상 추가 서비스(1회 추가 방문 등) 제안</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+    <div class="callout green"><div class="cl-label">T01 핵심 결론</div><p>기술90%+가격10% 평가구조, 85점 미만 협상제외. 점검내용(20점)+감리인력(15점)+기타지원(20점)이 55% 차지. 1인 법인은 상근비율 100%로 상근감리원(5점) 만점, 기동성을 활용한 점검내용(20점) 고득점 전략 필요. 보안위약금(DS-01)과 감리원변경 2일(DS-02)이 핵심 독소조항. 공동수급 허용 → 단독 제안 vs 공동수급 판단 필요.</p></div>
+
+    <div class="sign-row">
+      <div class="sign-box"><div class="sign-lbl">작성</div><div class="sign-name">사업분석가</div></div>
+      <div class="sign-box gold"><div class="sign-lbl">검토</div><div class="sign-name">홍부장</div></div>
+      <div class="sign-box"><div class="sign-lbl">승인일</div><div class="sign-name">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>T01 · RFP 분석 요약서</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ===== T02: 발주기관 딥서치 보고서 ===== -->
+<div class="sheet" id="T02">
+  <div class="doc-hdr">
+    <div class="doc-cat">T02 · 발주기관 웹 딥서치 보고서 · 사업분석가 작성</div>
+    <h2>발주기관 웹 딥서치 보고서</h2>
+    <div class="doc-sub">대상: 축산물품질평가원 (KAPE) · Search-First + 5단계 고도화 절차 적용</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">발주기관</div><div class="dm-val">축산물품질평가원</div></div>
+      <div class="dm-item"><div class="dm-label">딥서치 완료일</div><div class="dm-val">2026.06.16</div></div>
+      <div class="dm-item"><div class="dm-label">정보 신선도</div><div class="dm-val">2024~2026 (2년 이내)</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner" style="position:relative">
+    <div class="page-mark">T02 · 발주기관 딥서치 보고서</div>
+
+    <!-- 1. 기관 개요 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">01</span><h3>기관 개요</h3></div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">기관명</td><td class="v">축산물품질평가원 (Korea Institute for Animal Products Quality Evaluation, KAPE)</td></tr>
+          <tr><td class="k">설립 근거</td><td class="v">축산법 제36조 · 농림축산식품부 산하 위탁집행형 준정부기관</td></tr>
+          <tr><td class="k">설립일</td><td class="v">2001.07.27 (2010.01 축산물등급판정소→축산물품질평가원 명칭 변경)</td></tr>
+          <tr><td class="k">소재지</td><td class="v">세종특별자치시 아름서길 21 (아름동)</td></tr>
+          <tr><td class="k">원장</td><td class="v">박수진 (2026.03 제13대 취임)</td></tr>
+          <tr><td class="k">직원 수</td><td class="v">약 498명</td></tr>
+          <tr><td class="k">매출액</td><td class="v">약 667억원</td></tr>
+          <tr><td class="k">정보화 조직</td><td class="v"><b>AX혁신본부</b> — 지능정보기획처·빅데이터분석처·정보화사업처·정보보안팀 (2023년 디지털추진본부→AX혁신본부로 개편)</td></tr>
+          <tr><td class="k">특이사항</td><td class="v"><b>스마트축산본부</b> 2026.01 신설 (본부 체제 격상). 스마트축산기획처·스마트기반조성처·스마트축산지원처 산하</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><div class="cl-label">출처</div><p>위키백과, ekape.or.kr, 전자신문(2026.01.12), 라이브정보(2023.01.03), 피플파워(2024.01.03)</p></div>
+    </div>
+
+    <!-- 2. 정보화 사업 이력 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">02</span><h3>정보화 사업 이력 (3~5년)</h3></div>
+      <table class="risk-table">
+        <thead><tr><td style="width:40mm">사업명</td><td style="width:20mm">시기</td><td>비고</td></tr></thead>
+        <tbody>
+          <tr><td class="item">스마트축산 빅데이터 플랫폼 구축</td><td class="desc">2024~2025</td><td class="desc">축산 전주기 정보 연계 및 민간 개방</td></tr>
+          <tr><td class="item">스마트축산 빅데이터 표준화 가이드북</td><td class="desc">2024.12</td><td class="desc">표준화된 데이터 환경 구축</td></tr>
+          <tr><td class="item">축산물원패스(전자문서지갑) 시스템</td><td class="desc">2023~2024</td><td class="desc">전자증명서 통합 발급·조회 (종이서류 7종→디지털)</td></tr>
+          <tr><td class="item">AI 기반 양돈농가 생산성 향상 사업</td><td class="desc">2024~2025</td><td class="desc">AI 기술 활용 생산성 향상</td></tr>
+          <tr><td class="item">저탄소 축산물 인증 시스템</td><td class="desc">2023~</td><td class="desc">저탄소 인증 관리 시스템</td></tr>
+          <tr><td class="item">스마트축산 장비·솔루션 실증 시범사업</td><td class="desc">2026.06</td><td class="desc">3.67억원, 제한경쟁</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><div class="cl-label">출처</div><p>라이브정보(2024.12.27), 씬디스(2026.06), 조선일보(2026.04.16), 머니투데이(2025.03.04)</p></div>
+    </div>
+
+    <!-- 3. 감사·지적 이력 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">03</span><h3>감사·감리 지적 이력</h3></div>
+      <table class="risk-table">
+        <thead><tr><td style="width:14mm">구분</td><td style="width:24mm">일자</td><td>내용</td></tr></thead>
+        <tbody>
+          <tr><td class="level"><span class="bdg high">적발</span></td><td class="item">2024.05</td><td class="desc"><b>농림축산식품부 종합감사</b> — 보안 규정 위반, 복무기강 해이, 자의적 규정 운영 적발. 주의·개선 요구 수준. (출처: 네이트뉴스 2024.05.16, 백경뉴스 2024.05.16)</td></tr>
+          <tr><td class="level"><span class="bdg go">표창</span></td><td class="item">2025.12</td><td class="desc"><b>감사원 자체감사활동 표창 2건</b> — 적극행정 모범사례 + 사전컨설팅 우수사례(기관). (출처: 푸드뉴스 2025.12.26)</td></tr>
+          <tr><td class="level"><span class="bdg info">긍정</span></td><td class="item">2022~2024</td><td class="desc">개인정보보호 S등급 2회 연속 달성. 개인정보 관리수준 진단 '우수'. 유출·노출 사고 0건 유지. (출처: 팔뉴스, NCN뉴스, 라이브정보)</td></tr>
+          <tr><td class="level"><span class="bdg info">긍정</span></td><td class="item">2024</td><td class="desc">종합청렴도 2등급 (국민권익위원회). 고객만족도 7년 연속 최고등급.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. 현안 이슈 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">04</span><h3>현안 이슈 분석 (최근 2년)</h3></div>
+      <table class="risk-table">
+        <thead><tr><td style="width:14mm">구분</td><td style="width:24mm">시기</td><td>내용</td></tr></thead>
+        <tbody>
+          <tr><td class="level"><span class="bdg high">조직변화</span></td><td class="item">2026.01</td><td class="desc"><b>스마트축산본부 신설</b> — 기존 부서에서 본부 체제로 격상. 스마트축산 투자 의지 표명. (출처: 전자신문 2026.01.12)</td></tr>
+          <tr><td class="level"><span class="bdg high">원장교체</span></td><td class="item">2026.03</td><td class="desc"><b>제13대 박수진 원장 취임</b> — 정책 방향성 변화 가능성. (출처: 위키백과, ekape.or.kr)</td></tr>
+          <tr><td class="level"><span class="bdg mid">정책</span></td><td class="item">2025.03</td><td class="desc">전임 박병홍 원장 "ICT·AI로 데이터 활용한 축산업 혁신" 강조. 마이데이터·여기고기·축산물원패스 중점. (출처: 머니투데이 2025.03.04)</td></tr>
+          <tr><td class="level"><span class="bdg low">노사</span></td><td class="item">2021</td><td class="desc">노동조합 천막농성 이력 (막말·보복감사 관련). 2025년 이후 추가 갈등 보도 미확인. (출처: 아이케이피뉴스)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout red"><div class="cl-label">주목</div><p>2024년 농식품부 종합감사에서 보안 규정 위반 적발 이력 → 감리 제안서에서 보안 점검 강화 방안을 차별화 포인트로 제시할 필요. 스마트축산본부 신설(2026.01)과 신임 원장 체제(2026.03)로 정보화 투자 확대 기조 유지 전망.</p></div>
+    </div>
+
+    <!-- 5. Pain Point -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">05</span><h3>Pain Point 정의 (3개)</h3></div>
+      <div class="csf-grid">
+        <div class="csf-card" style="border-top-color:var(--red)">
+          <div class="csf-no">PAIN POINT 01</div>
+          <div class="csf-title">보안 규정 준수에 대한 외부 검증 공백</div>
+          <div class="csf-body"><b>문제:</b> 2024년 농식품부 종합감사에서 보안 규정 위반 적발. 감리 외부 점검 필요성 대두.<br><b>→ 해결 방향:</b> 감리과정에서 보안약점진단·개인정보보호·물리적보안 등 3중 보안 점검 체계 제안. "보안 위반 Zero" 목표 감리 수행.</div>
+        </div>
+        <div class="csf-card" style="border-top-color:var(--orange)">
+          <div class="csf-no">PAIN POINT 02</div>
+          <div class="csf-title">3개 사업 통합감리의 효율적 일정 관리</div>
+          <div class="csf-body"><b>문제:</b> 대상 사업 3개의 기간이 상이(210~240일)하고 단계별 감리 시점이 상이. 통합 일정 조정 리스크.<br><b>→ 해결 방향:</b> 통합 WBS 기반 마일스톤 관리. 1인 법인 단일 의사결정 체계로 신속한 일정 조정 가능.</div>
+        </div>
+        <div class="csf-card" style="border-top-color:var(--red)">
+          <div class="csf-no">PAIN POINT 03</div>
+          <div class="csf-title">스마트축산·빅데이터 분야 전문 감리 역량</div>
+          <div class="csf-body"><b>문제:</b> 스마트축산 빅데이터, AI, 축산정보e음 등 축산 특화 IT 시스템에 대한 감리 전문성 요구.<br><b>→ 해결 방향:</b> 축산·농림 분야 감리 경험 보유 감리원 배치. 외부 축산 IT 전문가 자문 체계 구축.</div>
+        </div>
+        <div class="csf-card" style="border-top-color:var(--green)">
+          <div class="csf-no">PAIN POINT 04</div>
+          <div class="csf-title">1.7억 예산 대비 적정 공수 산정의 어려움</div>
+          <div class="csf-body"><b>문제:</b> 감리예산 1.7억, 대상사업 3개(30~56억 추정). 통상 감리비율 3~8% 하한이나 예산 대비 적정 공수 산정이 까다로움.<br><b>→ 해결 방향:</b> 효율적 통합감리 모델 제시. 원격·현장 하이브리드로 공수 최적화. MD당 단가 경쟁력 확보.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. 제안 전략 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">06</span><h3>제안서 활용 전략</h3></div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">핵심 메시지 1</td><td class="v">"2024년 농식품부 감사 지적 사항을 감리에서 선제 점검 — 재발 방지 체계 구축"</td></tr>
+          <tr><td class="k">핵심 메시지 2</td><td class="v">"3개 사업 통합감리, 단일 의사결정 체계로 일정·품질·위험 통합 관리"</td></tr>
+          <tr><td class="k">핵심 메시지 3</td><td class="v">"스마트축산·빅데이터·AI 분야 차별화된 감리 전문성 — 축산 IT 전문가 Pool 운영"</td></tr>
+          <tr><td class="k">중점 감리 포인트</td><td class="v">① 보안약점진단 철저 (2024 감사지적 재발방지) ② 데이터 품질·표준화 (빅데이터 고도화) ③ 기능점수 검증 정확도</td></tr>
+          <tr><td class="k">의사결정자 키워드</td><td class="v">스마트축산 / AI / 빅데이터 / 디지털 전환 / 축산물원패스 / 여기고기 / 마이데이터 / 혁신 / 안전</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7. 출처 목록 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">07</span><h3>출처 목록</h3></div>
+      <table class="risk-table">
+        <thead><tr><td style="width:10mm">No</td><td style="width:34mm">출처</td><td style="width:24mm">발행일</td><td>URL / 문서명</td></tr></thead>
+        <tbody>
+          <tr><td class="item">1</td><td class="desc">위키백과</td><td class="desc">-</td><td class="desc">https://ko.wikipedia.org/wiki/축산물품질평가원</td></tr>
+          <tr><td class="item">2</td><td class="desc">전자신문</td><td class="desc">2026.01.12</td><td class="desc">https://www.etnews.com/20260112000051</td></tr>
+          <tr><td class="item">3</td><td class="desc">머니투데이</td><td class="desc">2025.03.04</td><td class="desc">https://www.mt.co.kr/policy/2025/03/04/2025022810557814252</td></tr>
+          <tr><td class="item">4</td><td class="desc">네이트뉴스</td><td class="desc">2024.05.16</td><td class="desc">https://news.nate.com/view/20240516n02764</td></tr>
+          <tr><td class="item">5</td><td class="desc">백경뉴스</td><td class="desc">2024.05.16</td><td class="desc">https://www.viva100.com/article/202405154442899</td></tr>
+          <tr><td class="item">6</td><td class="desc">푸드뉴스</td><td class="desc">2025.12.26</td><td class="desc">https://www.foodnews.co.kr/news/articleView.html?idxno=116595</td></tr>
+          <tr><td class="item">7</td><td class="desc">조선일보</td><td class="desc">2026.04.16</td><td class="desc">https://www.chosun.com/special/special_section/2026/04/16/52I6XP6E7VCJNOI3VCVEFVZBIQ</td></tr>
+          <tr><td class="item">8</td><td class="desc">축산물품질평가원</td><td class="desc">상시</td><td class="desc">https://www.ekape.or.kr</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sign-row">
+      <div class="sign-box"><div class="sign-lbl">작성</div><div class="sign-name">사업분석가</div></div>
+      <div class="sign-box gold"><div class="sign-lbl">검토</div><div class="sign-name">홍부장</div></div>
+      <div class="sign-box"><div class="sign-lbl">작성일</div><div class="sign-name">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>T02 · 발주기관 딥서치 보고서</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ===== T03: 원가분석표 · 수익성 분석 ===== -->
+<div class="sheet" id="T03">
+  <div class="doc-hdr">
+    <div class="doc-cat">T03 · 원가분석표 · 수익성 분석 보고서 · 사업분석가 작성 → 홍부장 검토</div>
+    <h2>원가분석표 · 수익성 분석 보고서</h2>
+    <div class="doc-sub">영역별 투입 공수 · 원격/현장 시나리오 · 낙찰가 시나리오별 수익률 · 협상 Bottom Line</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">감리예산</div><div class="dm-val">170,000천원</div></div>
+      <div class="dm-item"><div class="dm-label">대상사업 추정액</div><div class="dm-val">약 30~56억</div></div>
+      <div class="dm-item"><div class="dm-label">분석기준일</div><div class="dm-val">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner" style="position:relative">
+    <div class="page-mark">T03 · 원가분석표</div>
+
+    <!-- 영역별 투입공수 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">01</span><h3>영역별 투입 공수 산정</h3></div>
+      <div class="callout"><div class="cl-label">산정 기준</div><p>RFP 감리단계: 요구정의(5일) + 설계(8일) + 종료(8일) = 총 21일 현장감리 기준. 사전검토·시정조치확인 별도. 영역별 1인↑, 상근 50%↑ 충족. 3개 대상사업 통합 단일 WBS.</p></div>
+      <table class="cost-table">
+        <thead><tr><td style="width:28mm">영역</td><td style="width:18mm">인력 구성</td><td style="width:18mm">투입 MD</td><td style="width:18mm">상근여부</td><td>주요 감리 대상</td></tr></thead>
+        <tbody>
+          <tr><td class="k">총괄(PM) · 사업관리</td><td class="num">수석 1인</td><td class="num">21일×1인=21MD</td><td class="num">상근</td><td class="desc">3개 사업 통합 일정·위험·변경·품질 관리</td></tr>
+          <tr><td class="k">품질·사업관리</td><td class="num">감리원 1인</td><td class="num">16MD (3단계)</td><td class="num">상근</td><td class="desc">품질보증활동, 방법론 준수, 시험계획 점검</td></tr>
+          <tr><td class="k">응용시스템</td><td class="num">감리원 1인</td><td class="num">21MD (전단계)</td><td class="num">상근</td><td class="desc">기능 구현, UI/UX, 인터페이스, FP 검증</td></tr>
+          <tr><td class="k">데이터베이스</td><td class="num">감리원 1인</td><td class="num">16MD (3단계)</td><td class="num">비상근</td><td class="desc">데이터 표준화, 빅데이터 품질, DB 설계</td></tr>
+          <tr><td class="k">시스템아키텍처</td><td class="num">감리원 1인</td><td class="num">13MD (2단계)</td><td class="num">비상근</td><td class="desc">HW/SW 구성, 보안 아키텍처, 성능</td></tr>
+          <tr><td class="k">보안</td><td class="num">감리원 1인</td><td class="num">16MD (3단계)</td><td class="num">비상근</td><td class="desc">보안약점진단, 개인정보, 접근통제</td></tr>
+          <tr><td class="k">사전검토·계획수립</td><td class="num">전체</td><td class="num">10MD</td><td class="num">-</td><td class="desc">RFP 분석, 딥서치, 감리계획서 작성</td></tr>
+          <tr><td class="k">시정조치확인</td><td class="num">전체</td><td class="num">10MD (2회)</td><td class="num">-</td><td class="desc">단계별 시정조치 확인 및 통보</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="2">총 투입 공수</td><td class="num">143MD</td><td class="num">상근 58%</td><td>상근 5인×21일=83MD / 비상근 3인×20일=60MD</td></tr></tfoot>
+      </table>
+    </div>
+
+    <!-- 원격/현장 시나리오 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">02</span><h3>원격 vs 현장 시나리오별 원가 비교</h3></div>
+      <table class="cost-table">
+        <thead><tr><td style="width:34mm">시나리오</td><td style="width:20mm">현장 비중</td><td style="width:20mm">원격 비중</td><td style="width:22mm">총 원가(추정)</td><td>비고</td></tr></thead>
+        <tbody>
+          <tr><td class="k">시나리오 A (권장)</td><td class="num">80%</td><td class="num">20%</td><td class="num">~142,000천원</td><td class="desc">현장 중심 + 문서검토·사전조사 원격. RFP 현장 100% 상주 요건 충족</td></tr>
+          <tr><td class="k">시나리오 B (절충)</td><td class="num">70%</td><td class="num">30%</td><td class="num">~136,000천원</td><td class="desc">비상근 영역(DB·아키텍처) 원격 확대. 상주 100% 예외조항 활용</td></tr>
+          <tr><td class="k">시나리오 C (최적)</td><td class="num">60%</td><td class="num">40%</td><td class="num">~128,000천원</td><td class="desc">최대 원격. 단, RFP 요건(상주 100%) 미달 리스크 — 비권장</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 낙찰가 시나리오 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">03</span><h3>낙찰가 시나리오별 수익률</h3></div>
+      <table class="cost-table">
+        <thead><tr><td style="width:30mm">시나리오</td><td style="width:22mm">응찰가</td><td style="width:22mm">추정원가</td><td style="width:20mm">수익</td><td>수익률</td></tr></thead>
+        <tbody>
+          <tr><td class="k">낙관 (예정가 95%)</td><td class="num">161,500천원</td><td class="num">142,000천원</td><td class="num">19,500천원</td><td class="num">13.7%</td></tr>
+          <tr><td class="k">표준 (예정가 90%)</td><td class="num">153,000천원</td><td class="num">142,000천원</td><td class="num">11,000천원</td><td class="num">7.7%</td></tr>
+          <tr><td class="k">보수 (예정가 85%)</td><td class="num">144,500천원</td><td class="num">142,000천원</td><td class="num">2,500천원</td><td class="num">1.8%</td></tr>
+          <tr><td class="k">위험 (예정가 80%)</td><td class="num">136,000천원</td><td class="num">142,000천원</td><td class="num">-6,000천원</td><td class="num">적자</td></tr>
+        </tbody>
+      </table>
+      <div class="callout red"><div class="cl-label">경고</div><p>예정가 85% 이하 응찰 시 적자 전환 가능성. 기술90%+가격10% 평가 구조상 가격 경쟁력보다 기술 완성도가 중요. 무리한 가격 인하 자제.</p></div>
+    </div>
+
+    <!-- Bottom Line -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">04</span><h3>협상 Bottom Line</h3></div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">최소 응찰가 (Bottom Line)</td><td class="v"><b>145,000천원</b> (예정가 대비 85.3%) — 수익률 2.1% 확보</td></tr>
+          <tr><td class="k">권장 응찰가</td><td class="v"><b>150,000~153,000천원</b> (예정가 88~90%) — 수익률 5.6~7.7%</td></tr>
+          <tr><td class="k">MD당 평균 단가</td><td class="v">약 990천원/MD (143MD 기준 142,000천원 ÷ 143MD)</td></tr>
+          <tr><td class="k">Bottom Line 근거</td><td class="v">1인 법인 고정비(사무실·통신·보험 등) 약 3백만원/월 × 6개월 = 18백만원 + 직접인건비 124백만원 = 142백만원. 145백만원 이하 시 무의미한 수주</td></tr>
+          <tr><td class="k">핵심 변수</td><td class="v">① 외부 전문가 단가 ② 국외여비(불필요) ③ 공동수급 시 지분율에 따른 원가 변동</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+    <div class="callout gold"><div class="cl-label">T03 핵심 결론</div><p>권장 응찰가: 150~153백만원 (예정가 88~90%), 수익률 5.6~7.7%. 상근 비율 58%로 RFP 요건(50%↑) 충분히 충족. 비상근 영역(DB·아키텍처·보안)은 외부 전문가 Pool 활용. 1인 법인 경쟁력: 관리비 최소화로 MD당 단가 경쟁력 확보.</p></div>
+
+    <div class="sign-row">
+      <div class="sign-box"><div class="sign-lbl">작성</div><div class="sign-name">사업분석가</div></div>
+      <div class="sign-box gold"><div class="sign-lbl">검토</div><div class="sign-name">홍부장</div></div>
+      <div class="sign-box"><div class="sign-lbl">작성일</div><div class="sign-name">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>T03 · 원가분석표</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ===== T04: Go/No-Go 결정서 ===== -->
+<div class="sheet" id="T04">
+  <div class="doc-hdr">
+    <div class="doc-cat">T04 · Go/No-Go 결정서 · 홍부장 최종 결재</div>
+    <h2>Go / No-Go 결정서</h2>
+    <div class="doc-sub">사업분석가 RFP 분석 + 발주기관 딥서치 + 원가분석 종합 → 홍부장 최종 판단</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">사업명</div><div class="dm-val">2026년도 정보화 사업 통합감리</div></div>
+      <div class="dm-item"><div class="dm-label">발주기관</div><div class="dm-val">축산물품질평가원</div></div>
+      <div class="dm-item"><div class="dm-label">감리예산</div><div class="dm-val">170,000천원</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner" style="position:relative">
+    <div class="page-mark">T04 · Go/No-Go 결정서</div>
+
+    <!-- Go/No-Go CHECKLIST -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">01</span><h3>Go / No-Go 판단 체크리스트</h3></div>
+      <table class="cl-table">
+        <thead><tr><td style="width:26mm">판단 기준</td><td style="width:12mm">결과</td><td>근거</td></tr></thead>
+        <tbody>
+          <tr><td class="domain">감리 전문 영역 부합</td><td class="chk"><span class="bdg go">✔</span></td><td class="desc">정보시스템 통합감리 — 감리법인 전문 영역. 5개 영역 점검 필수.</td></tr>
+          <tr><td class="domain">RFP 내 개발·구현 업무 포함 여부</td><td class="chk"><span class="bdg go">✔</span></td><td class="desc">RFP 순수 감리 용역. 개발·구현 업무 없음. 피감리대상사업만 명시.</td></tr>
+          <tr><td class="domain">감리 수가 수익성 (Bottom Line↑)</td><td class="chk"><span class="bdg mid">△</span></td><td class="desc">권장 응찰가 150~153백만원, 수익률 5.6~7.7%. Bottom Line(145백만원) 이상 확보 가능하나 수익률 낮은 편.</td></tr>
+          <tr><td class="domain">발주기관 감리 활용 의지</td><td class="chk"><span class="bdg go">✔</span></td><td class="desc">2024년 농식품부 감사 보안지적 → 감리 필요성 인정. 청렴도 2등급, 감사원 표창 등 감사 수용도 양호.</td></tr>
+          <tr><td class="domain">발주기관 감리 우호성</td><td class="chk"><span class="bdg go">✔</span></td><td class="desc">감사원 표창 2건(2025), 청렴시민감사관 제도 운영, 개인정보보호 S등급. 감리 협조적 환경.</td></tr>
+          <tr><td class="domain">법적 준거 명확성</td><td class="chk"><span class="bdg go">✔</span></td><td class="desc">전자정부법, 행안부고시, NIA-PAG, 구축·운영지침 등 표준 법령 체계. 법적 리스크 낮음.</td></tr>
+          <tr><td class="domain">최소 감리비 기준선</td><td class="chk"><span class="bdg mid">△</span></td><td class="desc">예산 1.7억, 통상 감리비율 3~8% 대비 낮은 편. 효율적 통합감리로 극복 필요.</td></tr>
+          <tr><td class="domain">경쟁 환경</td><td class="chk"><span class="bdg mid">△</span></td><td class="desc">대기업 참여 제한. 공동수급 허용(5개사). 중소형 감리법인 경쟁 예상. 1인 법인 차별화 가능.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 최종 결정 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">02</span><h3>최종 결정</h3></div>
+      <div class="gng-box go">
+        <div class="gng-val">GO</div>
+        <div class="gng-text">
+          <b>조건부 Go — 수주 전략 수립 후 제안서 작성 착수</b><br>
+          전제 조건: ① 권장 응찰가(150~153백만원) 준수 ② 외부 전문가(DB·아키텍처·보안) Pool 사전 확보 ③ 1인 법인 차별화 메시지 제안서 전면 배치
+        </div>
+      </div>
+    </div>
+
+    <!-- 핵심 근거 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">03</span><h3>핵심 근거 · 수주 전략</h3></div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">핵심 Go 근거</td><td class="v">① 순수 감리 용역 (개발업무 無) ② 감리예산 Bottom Line 이상(145백만원↑) ③ 대기업 참여 제한으로 경쟁 제한적 ④ 2024년 감사 지적으로 감리 수요 확실 ⑤ 1인 법인 상근 100% 강점 극대화 가능</td></tr>
+          <tr><td class="k">핵심 Risk</td><td class="v">① 보안위약금 부담 (최대 850만원) ② 감리원 변경 2일 제한 ③ 수익률 5~8%로 낮은 편 ④ 3개 사업 통합 일정 리스크 ⑤ 공동수급 경쟁 시 단독 제안 열위</td></tr>
+          <tr><td class="k">차별화 전략</td><td class="v">① "1인 법인 = 직접 감리 + 신속 의사결정" ② "2024 감사 지적 재발 방지 감리" 메시지 ③ 축산 IT·빅데이터 전문성 외부 Pool 보유 ④ 원격감리 20% 병행 효율화 ⑤ 보안·FP·웹접근성 자동화 도구 보유</td></tr>
+          <tr><td class="k">협상 우선순위</td><td class="v">① 감리원 변경 2일→5일 연장 ② 현장 100% 상주 예외 인정(비상근 영역) ③ 시정조치확인 기간 5일 유지 ④ 감리계획서 제출 10일→14일 협의</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CSF -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">04</span><h3>Critical Success Factors (수주 필수 조건)</h3></div>
+      <div class="csf-grid">
+        <div class="csf-card"><div class="csf-no">CSF 01</div><div class="csf-title">보안약점진단 전문성 입증</div><div class="csf-body">국가정보원 인증 진단도구 보유 + 진단원 자격(6년↑ SW개발+정보보안) 보유 인력 제안</div></div>
+        <div class="csf-card"><div class="csf-no">CSF 02</div><div class="csf-title">축산 IT·빅데이터 감리 경험</div><div class="csf-body">공공기관 정보화 감리(특히 농림·축산 분야) 유사 실적 보유 증명. 빅데이터·AI 시스템 감리 경험</div></div>
+        <div class="csf-card"><div class="csf-no">CSF 03</div><div class="csf-title">통합감리 일정 관리 역량</div><div class="csf-body">3개 사업(기간 상이) 일정 통합 WBS 제시. 단일 의사결정 체계의 장점 구체적 기술</div></div>
+        <div class="csf-card"><div class="csf-no">CSF 04</div><div class="csf-title">자동화 도구 3종 구비</div><div class="csf-body">① 보안약점진단도구 ② 웹접근성 자동평가도구 ③ 기능점수(FP) 측정도구 — 명시적 제시</div></div>
+      </div>
+    </div>
+
+    <!-- 마일스톤 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">05</span><h3>추진 마일스톤</h3></div>
+      <table class="ms-table">
+        <thead><tr><td style="width:28mm">단계</td><td style="width:26mm">기간</td><td style="width:22mm">담당</td><td>핵심 활동</td></tr></thead>
+        <tbody>
+          <tr><td class="step">RFP 분석·딥서치</td><td class="date">~2026.06.18</td><td class="owner">사업분석가</td><td class="action">RFP 분석완료, 딥서치 확정, 원가분석표 작성</td></tr>
+          <tr><td class="step">제안서 논리 구조 설계</td><td class="date">~2026.06.20</td><td class="owner">사업분석가+홍부장</td><td class="action">스토리라인 확정, CSF 반영, 차별화 메시지 정의</td></tr>
+          <tr><td class="step">영역별 감리계획 초안</td><td class="date">~2026.06.23</td><td class="owner">영역별 감리원</td><td class="action">5개 영역 감리계획 초안 작성. 제안서 기술 내용 취합</td></tr>
+          <tr><td class="step">제안서 초안 완성</td><td class="date">~2026.06.27</td><td class="owner">사업분석가(취합)</td><td class="action">제안서 1차 취합. 조견표 포함. 홍부장 검토</td></tr>
+          <tr><td class="step">홍부장 최종 검토·승인</td><td class="date">~2026.06.29</td><td class="owner">홍부장</td><td class="action">최종 검토, 보완 지시, 승인</td></tr>
+          <tr><td class="step">제안서 제출</td><td class="date">~2026.06.30</td><td class="owner">홍부장</td><td class="action">조달청 기술평가 위임 일정에 맞춰 제출</td></tr>
+          <tr><td class="step">기술발표 준비</td><td class="date">~2026.07.05</td><td class="owner">홍부장(PM)</td><td class="action">PM 발표 준비. Q&A 대비. 경쟁 분석 보완</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 지식 자산 등록 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">06</span><h3>지식 자산 등록</h3></div>
+      <div class="body-text">본 분석 결과는 아래 지식 자산으로 등록 완료:<br>
+        · 축산물품질평가원_2026_통합감리_RFP_분석서<br>
+        · 축산물품질평가원_딥서치_보고서_2026<br>
+        · 축산물품질평가원_원가분석표_2026<br>
+        · Go_NoGo_결정서_축평원_2026</div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="callout green"><div class="cl-label">T04 최종 결론</div><p><b>조건부 GO.</b> 순수 감리 용역, 대기업 참여 제한, 감리 수요 확실. 단, 수익률 5~8%로 낮고 보안위약금 리스크 존재. 권장 응찰가 150~153백만원(예정가 88~90%) 준수 시 수익성 확보 가능. 1인 법인의 상근 100% + 신속 의사결정을 차별화 포인트로 제안서 전면 배치. 외부 전문가 Pool(DB·아키텍처·보안) 사전 확보 필수.</p></div>
+
+    <div class="sign-row">
+      <div class="sign-box"><div class="sign-lbl">작성 (사업분석가)</div><div class="sign-name">사업분석가</div></div>
+      <div class="sign-box gold"><div class="sign-lbl">검토·결정 (홍부장)</div><div class="sign-name">홍부장</div></div>
+      <div class="sign-box"><div class="sign-lbl">결정일</div><div class="sign-name">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>T04 · Go/No-Go 결정서</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+<!-- ===== T05: 협상 전략서 ===== -->
+<div class="sheet" id="T05">
+  <div class="doc-hdr">
+    <div class="doc-cat">T05 · 협상 전략서 · 사업분석가 작성 → 홍부장 검토·승인</div>
+    <h2>협상 전략서</h2>
+    <div class="doc-sub">RFP 독소조항 협상대응 + 가격협상전략 + 우선순위 + BATNA/WATNA 분석</div>
+    <div class="doc-meta">
+      <div class="dm-item"><div class="dm-label">대상</div><div class="dm-val">축산물품질평가원 통합감리</div></div>
+      <div class="dm-item"><div class="dm-label">예정가</div><div class="dm-val">170,000천원</div></div>
+      <div class="dm-item"><div class="dm-label">Bottom Line</div><div class="dm-val">145,000천원</div></div>
+    </div>
+  </div>
+  <div class="sheet-inner" style="position:relative">
+    <div class="page-mark">T05 · 협상 전략서</div>
+
+    <!-- 협상 기본 프레임 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">01</span><h3>협상 기본 프레임</h3></div>
+      <div class="callout gold"><div class="cl-label">원칙</div><p>원칙중심협상(Principled Negotiation) — 사람과 문제 분리, 이익에 집중, 상호이익 창출, 객관적 기준 활용. 발주기관(축평원)은 감사 지적 재발 방지라는 실질적 니즈 보유. 협상 창구는 협상에 의한 계약 특성상 기술평가 결과 통보 후.</p></div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">협상 상대</td><td class="v">축산물품질평가원 (계약담당자 + 감독부서)</td></tr>
+          <tr><td class="k">협상 시점</td><td class="v">기술평가 완료 후 협상적격 통보 → 7일 이내 협상 실시 (조달청 협상에의한계약 절차)</td></tr>
+          <tr><td class="k">협상 범위</td><td class="v">① 기술협상: 감리방법·일정·인력 (DS 조항 완화 포함) ② 가격협상: 예정가 100% ~ 80% 범위</td></tr>
+          <tr><td class="k">우리 협상 목표</td><td class="v">① DS-01·02·03 완화 ② Bottom Line(145백만원) 이상 확보 ③ 제안서 과잉 약속 방지 ④ 계약 리스크 최소화</td></tr>
+          <tr><td class="k">발주처 숨은 니즈</td><td class="v">① 2024년 농식품부 감사 지적 보안 취약점 재발 방지 ② 3개 사업 통합 일정 준수 ③ 감리 결과의 대외 신뢰성 확보 ④ 스마트축산본부 신설(2026.01) 관련 정보화 사업 안정적 추진</td></tr>
+          <tr><td class="k">협상 레버리지</td><td class="v">① 1인 법인 = 상근 100% + 직접 감리 → 품질 우수 ② 2024 감사 지적 경험 보유(Pool) ③ 축산·빅데이터 전문성 ④ 자동화 도구 3종 보유 ⑤ 대기업 참여 제한 → 중소형 법인 우위</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 독소조항별 협상 전략 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">02</span><h3>독소조항별 협상 전략</h3></div>
+      <table class="neg-table">
+        <thead><tr><td style="width:16mm">ID</td><td style="width:14mm">위험</td><td style="width:40mm">조항 내용</td><td style="width:38mm">협상 목표</td><td style="width:36mm">최소 양보선</td><td>협상 실탄 (근거 자료)</td></tr></thead>
+        <tbody>
+          <tr>
+            <td class="id">DS-01</td>
+            <td class="sev"><span class="bdg high">High</span></td>
+            <td class="ds-item">보안위반 → 부정당업자 + 위약금 5%·3%·1% 차등</td>
+            <td class="neg-goal"><b>위약금 1% 단일화 + 부정당업자 등록 요건 완화(고의·중과실 입증 시 예외)</b></td>
+            <td class="neg-line">위약금 3% 상한 + 1회 위반 시 경고조치 부과 (반복 위반 시에만 위약금)</td>
+            <td class="neg-ammo">① 감리법인은 내부정보 접근권한 한정적 (개발사 대비 보안위반 가능성 낮음)<br>② 행안부고시 정보시스템감리기준 — 보안위반 제재 규정 별도 없음 (발주처 자체 기준 과도)<br>③ 유사 공공감리 계약 보안위약금 관행: 최대 3%+경고조치</td>
+          </tr>
+          <tr>
+            <td class="id">DS-02</td>
+            <td class="sev"><span class="bdg high">High</span></td>
+            <td class="ds-item">감리원 변경 2일 이내 제출</td>
+            <td class="neg-goal"><b>변경 제출 기한 5~7영업일 연장 + 사전 변경 예고 절차 도입</b></td>
+            <td class="neg-line">변경 제출 5영업일 + 불가피한 사유(질병·사고) 당일 통보 후 3영업일 보완</td>
+            <td class="neg-ammo">① 전자정부법·행안부고시 — 감리원 변경 제출 기한 규정 없음 (발주처 자체 규정)<br>② 2일은 실질적으로 이행 불가능 (경조사·질병 발생 → 증빙·대체인력협의·내부결재 소요 최소 5일)<br>③ 1인 법인 — 감리원 교체 시 발주처 협의 필수적 (과도한 규제 불필요)</td>
+          </tr>
+          <tr>
+            <td class="id">DS-03</td>
+            <td class="sev"><span class="bdg high">High</span></td>
+            <td class="ds-item">현장감리 모든 감리원 100% 상주</td>
+            <td class="neg-goal"><b>상주율 100% 예외 인정: 비상근 영역(DB·아키텍처·보안) 원격감리 20% 병행</b></td>
+            <td class="neg-line">상주 예외 영역 명시 + 사전 문서검토 · 사후 시정확인 현장 불참 인정</td>
+            <td class="neg-ammo">① 행안부고시 제2024-53호 — 원격감리 수행 근거 명시 (감리원의 효율적 배치 가능)<br>② NIA 정보시스템감리 수행가이드 — 현장·원격 혼합감리 모델 인정<br>③ 코로나19 이후 공공감리 원격 병행 표준화 (2025 행안부 지침)<br>④ 비상근 전문가(DB·보안) 현장 상주 시 비용 증가 → 발주처 예산 효율성 저하</td>
+          </tr>
+          <tr>
+            <td class="id">DS-04</td>
+            <td class="sev"><span class="bdg mid">Mid</span></td>
+            <td class="ds-item">제안서 내용 = 계약 효력</td>
+            <td class="neg-goal"><b>'발주기관과 사전 협의 후 조정 가능' 단서 제안서·계약서에 명시</b></td>
+            <td class="neg-line">계약 특수조건에 '제안서 내용에도 불구하고 발주처-수급사 상호 협의로 조정 가능' 문구 포함</td>
+            <td class="neg-ammo">① 국가계약법 기본원칙 — 계약서>제안서 우선 해석 (법률상 이미 계약서 우선)<br>② 과잉 약속 분쟁 사례: 2023 조달청 분쟁조정사례 — 제안서 구속력 관련 다수 분쟁<br>③ 상호협의조정권은 표준계약서 일반조항 (발주처 수용 가능)</td>
+          </tr>
+          <tr>
+            <td class="id">DS-05</td>
+            <td class="sev"><span class="bdg mid">Mid</span></td>
+            <td class="ds-item">공동수급 구성 변경 불가</td>
+            <td class="neg-goal"><b>단독 제안 확정 (공동수급 불필요)</b></td>
+            <td class="neg-line">단독 제안. 필요 시 기술평가 후 협상 단계에서 공동수급 변경 요청 (발주처 재량)</td>
+            <td class="neg-ammo">① 1인 법인 — 단독 수행 가능 (5개 영역 외부 Pool 보유)<br>② 공동수급 행정비용 > 단독 수익률 감소 효과</td>
+          </tr>
+          <tr>
+            <td class="id">DS-06</td>
+            <td class="sev"><span class="bdg mid">Mid</span></td>
+            <td class="ds-item">참여감리원 타 사업 일정 중복 금지</td>
+            <td class="neg-goal"><b>비상근 감리원에 한해 일정 중복 허용 (책임감리원 한정)</b></td>
+            <td class="neg-line">상근감리원(PM) 일정 중복 금지. 비상근 전문가(DB·보안·아키텍처)는 겸직 허용</td>
+            <td class="neg-ammo">① 행안부고시 — 감리원 겸직 제한은 상근감리원 대상 (비상근 예외 인정)<br>② 현실적: 3개 사업 210~240일 기간 — 비상근 전문가 단일 프로젝트 전념 불가능</td>
+          </tr>
+          <tr>
+            <td class="id">DS-07</td>
+            <td class="sev"><span class="bdg low">Low</span></td>
+            <td class="ds-item">제안서 보상 없음</td>
+            <td class="neg-goal"><b>수용 (협상 불필요. 원가에 반영 처리)</b></td>
+            <td class="neg-line">제안 비용을 원가 산정 시 감내 가능한 수준으로 반영</td>
+            <td class="neg-ammo">① 감리 용역 제안 비용 통상 50~100만원 (1인 법인 부담 가능)<br>② 제안서 보상 대상이면 입찰 참여율 증가 = 경쟁 심화</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 협상 대화 포인트 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">03</span><h3>핵심 협상 대화 포인트 (Talking Points)</h3></div>
+
+      <div class="tp-box">
+        <div class="tp-label">DS-01 보안위약금 협상 — 핵심 메시지</div>
+        <p>"저희는 감리법인으로서 개발사와 달리 내부 정보시스템에 대한 직접적인 접근·수정 권한이 제한적입니다. 보안위반 가능성이 객관적으로 낮은 점을 감안해 주십시오. 유사 공공기관 감리계약에서는 위약금 1~3% + 경고조치를 표준으로 채택하고 있습니다. 축평원의 보안 정책은 충실히 준수하되, 제재 체계를 관행 수준으로 조정해 주시면 감리 품질에 더 집중할 수 있습니다."</p>
+      </div>
+      <div class="tp-box">
+        <div class="tp-label">DS-02 감리원변경 2일 — 핵심 메시지</div>
+        <p>"2일은 감리원 개인의 질병, 경조사 등 불가피한 사유 발생 시 증빙부터 대체인력 협의, 내부 결재까지 소요되는 현실적 행정 시간을 고려할 때 매우 짧은 기한입니다. 1인 법인의 경우 더욱 그러합니다. 5영업일로 조정해 주시고, 비상 상황(응급실 내원 등)은 당일 유선 통보 후 3영업일 내 서류 제출로 예외를 인정해 주시면 실효성 있는 인력 관리가 가능합니다."</p>
+      </div>
+      <div class="tp-box">
+        <div class="tp-label">DS-03 현장 100% 상주 — 핵심 메시지</div>
+        <p>"행안부 정보시스템감리기준 제2024-53호 및 NIA 수행가이드에서 원격감리와 현장감리의 혼합 모델을 인정하고 있습니다. DB·보안·아키텍처 영역은 사전에 문서를 검토하고 원격으로 분석한 후, 핵심 회의·현장확인 시에만 참석하는 방식이 효율적입니다. 이 방식은 발주처 예산 낭비를 줄이고 감리 효과는 동일하게 유지하는 합리적 대안입니다."</p>
+      </div>
+    </div>
+
+    <!-- 가격 협상 전략 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">04</span><h3>가격 협상 전략</h3></div>
+      <div class="callout"><div class="cl-label">평가 구조 분석</div><p>기술90% + 가격10%. 기술평가 순위 1위 확보 시 가격 점수 차이가 수주에 미치는 영향 제한적. 따라서 가격 인하보다 기술 완성도 유지에 집중.</p></div>
+      <table class="cost-table">
+        <thead><tr><td style="width:34mm">시나리오</td><td style="width:22mm">응찰가</td><td style="width:22mm">예정가대비</td><td style="width:22mm">수익</td><td>협상 전략</td></tr></thead>
+        <tbody>
+          <tr><td class="k">희망가 제시</td><td class="num">153,000천원</td><td class="num">90.0%</td><td class="num">11,000천원</td><td class="desc">기술 1위 자신 시 가격 협상 여유. DS 완화와 패키지 딜</td></tr>
+          <tr><td class="k">1차 양보</td><td class="num">150,000천원</td><td class="num">88.2%</td><td class="num">8,000천원</td><td class="desc">발주처 예산 85% 요구 시 1차 대안. DS-01·02 양보 조건</td></tr>
+          <tr><td class="k">최종 양보 (Bottom)</td><td class="num">145,000천원</td><td class="num">85.3%</td><td class="num">3,000천원</td><td class="desc">Bottom Line. 이하 불가. DS-03 원격 20% 반드시 포함</td></tr>
+          <tr><td class="k">거절 (No Deal)</td><td class="num">140,000천원↓</td><td class="num">82.4%↓</td><td class="num">적자</td><td class="desc">수주 포기가 유리. 적자 감리는 품질 저하 → 발주처·법인 모두 손해</td></tr>
+        </tbody>
+      </table>
+      <div class="callout red"><div class="cl-label">경고</div><p>140백만원(82.4%) 이하 응찰 시 적자. 기술 90% 평가 구조에서 가격 점수 차이는 최대 2점(차등점수제)에 불과. 무리한 가격 인하로 기술 점수 깎이는 역효과 방지.</p></div>
+    </div>
+
+    <!-- 협상 우선순위 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">05</span><h3>협상 우선순위 — Must Have / Nice to Have / Give Up</h3></div>
+      <table class="neg-table">
+        <thead><tr><td style="width:22mm">우선순위</td><td style="width:16mm">ID</td><td style="width:44mm">항목</td><td style="width:30mm">요구 조건</td><td>근거</td></tr></thead>
+        <tbody>
+          <tr>
+            <td class="sev"><span class="pri-bdg must">MUST</span></td>
+            <td class="id">DS-02</td>
+            <td class="ds-item">감리원 변경 기한 연장</td>
+            <td class="neg-goal">5영업일 + 비상 예외</td>
+            <td class="neg-ammo">1인 법인 리스크 최대. 협상 불가 수준인 2일은 이행 불가능 → 반드시 완화</td>
+          </tr>
+          <tr>
+            <td class="sev"><span class="pri-bdg must">MUST</span></td>
+            <td class="id">DS-01</td>
+            <td class="ds-item">보안위약금 완화</td>
+            <td class="neg-goal">1% 단일화 / 3% 상한</td>
+            <td class="neg-ammo">최대 850만원 위약금 = 예상 수익의 77~106% → 1인 법인 치명적</td>
+          </tr>
+          <tr>
+            <td class="sev"><span class="pri-bdg must">MUST</span></td>
+            <td class="id">가격</td>
+            <td class="ds-item">Bottom Line 145백만원 유지</td>
+            <td class="neg-goal">140백만원 미만 거절</td>
+            <td class="neg-ammo">적자 감리는 품질 훼손 → 발주처 신뢰 상실 + 감사 지적 리스크</td>
+          </tr>
+          <tr>
+            <td class="sev"><span class="pri-bdg nice">NICE</span></td>
+            <td class="id">DS-03</td>
+            <td class="ds-item">원격감리 20% 병행</td>
+            <td class="neg-goal">비상근 영역 원격 인정</td>
+            <td class="neg-ammo">행안부고시 근거 있음. 발주처 수용 가능성 높음. 포기 가능하나 수익률 개선 효과</td>
+          </tr>
+          <tr>
+            <td class="sev"><span class="pri-bdg nice">NICE</span></td>
+            <td class="id">DS-04</td>
+            <td class="ds-item">제안서 조정권 명시</td>
+            <td class="neg-goal">'상호 협의 조정 가능' 문구</td>
+            <td class="neg-ammo">법률상 계약서 우선하나 명시적 안전장치 확보</td>
+          </tr>
+          <tr>
+            <td class="sev"><span class="pri-bdg give">GIVE</span></td>
+            <td class="id">DS-06</td>
+            <td class="ds-item">비상근 겸직 허용 요청</td>
+            <td class="neg-goal">포기 가능</td>
+            <td class="neg-ammo">비상근 감리원 Pool 대체 가능. 발주처 양보 얻기 위한 교환 카드</td>
+          </tr>
+          <tr>
+            <td class="sev"><span class="pri-bdg give">GIVE</span></td>
+            <td class="id">DS-07</td>
+            <td class="ds-item">제안 보상 요청</td>
+            <td class="neg-goal">포기 (수용)</td>
+            <td class="neg-ammo">제안 비용 감내 가능. 협상 의제로 삼을 가치 없음</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BATNA / WATNA -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">06</span><h3>BATNA · WATNA 분석</h3></div>
+      <div class="pact-grid">
+        <div class="pact-card green">
+          <div class="pact-label">BEST CASE</div>
+          <div class="pact-title">협상 성공 — 권장 조건 수주</div>
+          <div class="pact-body">
+            · DS-02 감리원변경 5영업일 확보<br>
+            · DS-01 위약금 1% 단일화<br>
+            · DS-03 원격 20% 병행 인정<br>
+            · 가격: 153백만원 (예정가 90%)<br>
+            · <b>수익: 11,000천원 (7.7%)</b>
+          </div>
+        </div>
+        <div class="pact-card red">
+          <div class="pact-label">WORST CASE</div>
+          <div class="pact-title">협상 실패 — 응찰 포기 / Bottom Line 미달</div>
+          <div class="pact-body">
+            · DS 전부 원안 유지 (2일·5%·100%상주)<br>
+            · 발주처: "수정 불가, 표준계약서"<br>
+            · 가격: 140백만원↓ 요구<br>
+            · <b>판단: 응찰 포기</b><br>
+            · 대체 사업: 2026년 하반기 타 공공 감리 입찰 검토
+          </div>
+        </div>
+      </div>
+      <table class="kv-table">
+        <tbody>
+          <tr><td class="k">BATNA (Best Alternative)</td><td class="v">본 사업 수주 실패 시, 2026년 하반기 예정 타 공공기관(농식품부 산하·유관기관) 감리 용역 입찰 참여. 하반기 통상 9~11월 집중. 단, 현금 흐름 공백 3~5개월 리스크 존재.</td></tr>
+          <tr><td class="k">WATNA (Worst Alternative)</td><td class="v">Bottom Line 미만 수주 → 적자 감리 → 품질 저하 → 발주처 신뢰 상실 → 향후 수주 기회 손실. 1인 법인 평판 리스크가 가장 큰 손실.</td></tr>
+          <tr><td class="k">협상 이탈 기준</td><td class="v">① 가격 140백만원 미만 강요 시 ② DS-01·02 전혀 양보 불가 시 ③ 발주처 일방적 계약 조건 수정 요구 시. 이탈 전 '잠시 검토 시간' 요청 후 재검토.</td></tr>
+          <tr><td class="k">협상 종료 후 액션</td><td class="v">성공: 계약 체결 → 감리계획서 제출(10~14일) → 사전검토 착수 / 실패: 손실 분석 → 데브리프 → 피드백 → 차기 입찰 시정 조치</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 협상 진행 계획 -->
+    <div class="sec">
+      <div class="sec-h"><span class="num">07</span><h3>협상 진행 계획</h3></div>
+      <table class="ms-table">
+        <thead><tr><td style="width:30mm">단계</td><td style="width:28mm">시점</td><td style="width:24mm">담당</td><td>핵심 활동</td></tr></thead>
+        <tbody>
+          <tr><td class="step">사전 준비</td><td class="date">기술평가 제출 전 (~06.30)</td><td class="owner">사업분석가</td><td class="action">본 협상전략서 확정. DS 협상 카드 발주처별 관행 조사. 법률 검토(위약금 관련).</td></tr>
+          <tr><td class="step">기술평가 대기</td><td class="date">~07.10 (추정)</td><td class="owner">홍부장</td><td class="action">기술평가 결과 통보 대기. 협상적격 통보 시 협상 준비 돌입. 탈락 시 차기 사업 전환.</td></tr>
+          <tr><td class="step">1차 협상</td><td class="date">협상적격 통보 후 7일↑</td><td class="owner">홍부장(PM)</td><td class="action">기술·가격 분리 협상. DS-01·02 집중. 가격은 153백만원 제시. 원격 20% 병행 제안.</td></tr>
+          <tr><td class="step">2차 협상 (필요시)</td><td class="date">1차 후 3~5일</td><td class="owner">홍부장</td><td class="action">발주처 반응 분석 후 재협상. DS-03 양보 카드로 활용. Bottom Line 방어.</td></tr>
+          <tr><td class="step">계약 체결</td><td class="date">협상 완료 후</td><td class="owner">홍부장</td><td class="action">계약서 검토 (DS 반영 여부 확인). 특수조건에 협상 결과 명시. 계약 체결.</td></tr>
+          <tr><td class="step">데브리프</td><td class="date">계약 체결 후 3일↑</td><td class="owner">사업분석가</td><td class="action">협상 결과 분석. 차기 사업 협상 전략 피드백. 지식자산 등록.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+    <div class="callout gold"><div class="cl-label">T05 핵심 결론</div><p><b>Must Have: DS-02(변경기한 5영업일) + DS-01(위약금 3%↓) + 가격 Bottom Line 145백만원↑.</b> 협상 레버리지: 대기업 참여 제한 + 1인 법인 상근 100% + 감사 지적 재발 방지 니즈. 기술 1위 확보가 가격 협상력의 전제 조건. 원격 20% 병행은 양보 가능하나 DS-01·02는 반드시 관철. 140백만원 미만은 No Deal.</p></div>
+
+    <div class="sign-row">
+      <div class="sign-box"><div class="sign-lbl">작성</div><div class="sign-name">사업분석가</div></div>
+      <div class="sign-box gold"><div class="sign-lbl">검토·승인</div><div class="sign-name">홍부장</div></div>
+      <div class="sign-box"><div class="sign-lbl">작성일</div><div class="sign-name">2026.06.16</div></div>
+    </div>
+  </div>
+  <div class="doc-ftr">
+    <div class="ftr-l">전문 1인 감리회사 <span>T05 · 협상 전략서</span></div>
+    <div class="ftr-r">Internal · v1.0 · 2026.06.16</div>
+  </div>
+</div>
+
+</div><!-- /stack -->
+<script>
+</script>
+</body>
+</html>
